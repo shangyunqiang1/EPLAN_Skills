@@ -14,6 +14,8 @@ def read_json(path):
 
 
 def validate():
+    workflow = yaml.safe_load((ROOT / ".github/workflows/validate.yml").read_text(encoding="utf-8"))
+    assert isinstance(workflow.get("jobs"), dict) and workflow["jobs"], "Invalid CI workflow"
     manifest = read_json(PLUGIN / "plugin.json")
     assert manifest["$schema"] == "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json"
     assert manifest["name"] == "eplan-skills"
