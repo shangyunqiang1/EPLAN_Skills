@@ -8,8 +8,8 @@
     {
       "name": "eplan-skills",
       "source": "./plugins/eplan-skills",
-      "description": "Canary-ECAD EPLAN MCP and skills integration",
-      "version": "0.1.1",
+      "description": "EPLAN 电气设计自动化插件：整合 Canary-ECAD MCP、P8 脚本/API、EEC Pro 开发技能与文档检索。 | EPLAN automation MCP and skills integrated from Canary-ECAD.",
+      "version": "0.1.2",
       "author": {
         "name": "shangyunqiang1",
         "url": "https://github.com/shangyunqiang1"
