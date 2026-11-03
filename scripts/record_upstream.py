@@ -14,7 +14,7 @@ REPOS = ["eplan-mcp", "eplan-scripting-skill", "eec-pro-skill", "eplan-cloudflar
 
 
 def main():
-    sources, files = [], []
+    sources, files, integration_files = [], [], []
     for repo in REPOS:
         source = ROOT / ".upstream" / repo
         commit = subprocess.check_output(["git", "-C", str(source), "rev-parse", "HEAD"], text=True).strip()
@@ -30,7 +30,11 @@ def main():
     for path in sorted((PLUGIN / "vendor/eplan-mcp").rglob("*")):
         if path.is_file() and not any(part in {"__pycache__", ".pytest_cache", "logs"} for part in path.parts):
             relative = path.relative_to(PLUGIN / "vendor/eplan-mcp").as_posix()
-            record("eplan-mcp", relative, "vendor/eplan-mcp/" + relative)
+            if (ROOT / ".upstream/eplan-mcp" / relative).is_file():
+                record("eplan-mcp", relative, "vendor/eplan-mcp/" + relative)
+            else:
+                integration_files.append({"path": "vendor/eplan-mcp/" + relative,
+                    "sha256": hashlib.sha256(path.read_bytes().replace(b"\r\n", b"\n")).hexdigest()})
     for repo, upstream, bundled in [
         ("eplan-scripting-skill", "skills/eplan-p8/eplan-scripting", "skills/eplan-scripting"),
         ("eec-pro-skill", "skills/eec-pro-development", "skills/eec-pro-development"),
@@ -42,7 +46,7 @@ def main():
     record("eplan-scripting-skill", "router/SKILL.md", "skills/eplan-router/SKILL.md")
     for repo in REPOS:
         record(repo, "LICENSE", f"licenses/{repo}-MIT.txt")
-    (PLUGIN / "upstream-lock.json").write_text(json.dumps({"hashNormalization": "text-crlf-to-lf", "sources": sources, "files": files}, indent=2) + "\n", encoding="utf-8")
+    (PLUGIN / "upstream-lock.json").write_text(json.dumps({"hashNormalization": "text-crlf-to-lf", "sources": sources, "files": files, "integrationFiles": integration_files}, indent=2) + "\n", encoding="utf-8")
     print(f"Recorded {len(files)} upstream mappings. Review source and bundled hash differences.")
 
 

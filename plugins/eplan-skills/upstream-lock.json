@@ -459,7 +459,7 @@
       "upstreamPath": "eplan-p8-mcp-server/mcp_server/server.py",
       "path": "vendor/eplan-mcp/eplan-p8-mcp-server/mcp_server/server.py",
       "upstreamSha256": "b5b6cc304b4ccbe3f895974ae328276664da683af6f6566626d680faf5bbf010",
-      "bundledSha256": "b5b6cc304b4ccbe3f895974ae328276664da683af6f6566626d680faf5bbf010"
+      "bundledSha256": "8bdf6b60f9246d9b6de2d5d8147399fe970fab917e77badaf64898baa8e355a4"
     },
     {
       "source": "eplan-mcp",
@@ -1034,6 +1034,12 @@
       "path": "licenses/eplan-cloudflare-rags-MIT.txt",
       "upstreamSha256": "751999a977cd42807cc1178a46154344f186bc48c97ded588b049452d77e0911",
       "bundledSha256": "751999a977cd42807cc1178a46154344f186bc48c97ded588b049452d77e0911"
+    }
+  ],
+  "integrationFiles": [
+    {
+      "path": "vendor/eplan-mcp/eplan-p8-mcp-server/mcp_server/tool_policy.py",
+      "sha256": "33ea0cb7d15469ae49dd923e1b185ae2d82f31720420830de095c395cec2ccd7"
     }
   ]
 }

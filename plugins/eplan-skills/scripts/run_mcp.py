@@ -11,6 +11,10 @@ import subprocess
 import sys
 import tempfile
 
+sys.dont_write_bytecode = True
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from runtime_environment import find_environment
+
 PLUGIN_ROOT = Path(__file__).resolve().parents[1]
 SERVER_ROOT = PLUGIN_ROOT / "vendor/eplan-mcp/eplan-p8-mcp-server"
 
@@ -64,9 +68,13 @@ def main() -> int:
     if sys.platform != "win32":
         print("Local EPLAN automation requires Windows; documentation MCPs are remote.", file=sys.stderr)
         return 1
-    target = data_dir() / "venv/Scripts/python.exe"
-    if not target.is_file():
-        print(f"EPLAN dependencies missing. Run: powershell -ExecutionPolicy Bypass -File \"{PLUGIN_ROOT / 'scripts/setup.ps1'}\"", file=sys.stderr)
+    profile = "symbols" if os.environ.get("EPLAN_SKILLS_SYMBOL_SEARCH") == "1" else "core"
+    target = find_environment(data_dir(), profile)
+    if target is None and profile == "core":
+        target = find_environment(data_dir(), "symbols")
+    if target is None:
+        optional = " -IncludeSymbolSearch" if profile == "symbols" else ""
+        print(f"EPLAN dependencies missing. Run: powershell -ExecutionPolicy Bypass -File \"{PLUGIN_ROOT / 'scripts/setup.ps1'}\"{optional}", file=sys.stderr)
         return 1
     if Path(sys.executable).resolve() != target.resolve():
         return subprocess.call([str(target), "-u", str(Path(__file__).resolve())])
@@ -85,7 +93,25 @@ def main() -> int:
     sys.path.insert(0, str(runtime_root / "mcp_server"))
     # Import-time diagnostics belong on stderr; stdout is MCP JSON-RPC only.
     with contextlib.redirect_stdout(sys.stderr):
-        from server import mcp
+        import server
+        from eplan_connection import EPLANConnectionManager, get_manager
+        from eplan_doctor import register_tools, load_connection_settings
+        from documentation import register_configuration_tool
+        try:
+            settings = load_connection_settings(data_dir())
+        except (OSError, ValueError):
+            settings = None
+            print("保存的连接配置无法读取，未加载该目标；请使用 eplan_doctor 检查并显式重新设置。", file=sys.stderr)
+        if settings:
+            EPLANConnectionManager.DEFAULT_HOST = settings["host"]
+            EPLANConnectionManager.DEFAULT_PORT = settings["port"]
+            get_manager(settings.get("version"))
+        register_tools(server.mcp, data_dir())
+        register_configuration_tool(server.mcp, data_dir())
+        server.apply_tool_policy(server.mcp, trusted_extra={
+            "eplan_doctor": "read_only", "eplan_connection_configure": "connection_lifecycle",
+            "eplan_documentation_configure": "connection_lifecycle"})
+        mcp = server.mcp
     mcp.run(transport="stdio")
     return 0
 

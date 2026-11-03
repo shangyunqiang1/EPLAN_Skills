@@ -21,6 +21,7 @@ import sys
 import types
 import functools
 from mcp.server.fastmcp import FastMCP
+from mcp import types as mcp_types
 from eplan_connection import get_manager, detect_installed_versions
 
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
@@ -32,6 +33,8 @@ sys.path.insert(0, os.path.join(SCRIPT_DIR, "api"))
 import api.actions as eplan_actions
 from api.actions import _project_cache
 from tool_registry import ToolRegistry, make_meta_tools, META_TOOL_NAMES
+from tool_policy import (PLUGIN_CATEGORIES, UNKNOWN_CATEGORY, META_CATEGORY_KEY,
+                         annotations_for, category_for, policy_options)
 
 
 # ============================================================================
@@ -103,6 +106,74 @@ def _json_wrapper(f):
 
     mcp_tool_wrapper.__doc__ = f.__doc__ or ""
     return mcp_tool_wrapper
+
+
+def _explicit_failure(result):
+    """Recognize only a top-level, explicit business failure in an MCP result."""
+    payload = result.structuredContent
+    if not isinstance(payload, dict) and len(result.content) == 1:
+        content = result.content[0]
+        if isinstance(content, mcp_types.TextContent):
+            try:
+                payload = json.loads(content.text)
+            except (ValueError, TypeError):
+                return False
+    return isinstance(payload, dict) and payload.get("success") is False
+
+
+def install_result_adapter(app):
+    """Normalize protocol failure flags without changing direct tool returns.
+
+    Keep the SDK's existing validation, error responses, cancellation and
+    content intact. This wraps the registered MCP request handler once, so it
+    also covers tools added by extensions after construction.
+    """
+    if getattr(app, "_eplan_result_adapter_installed", False):
+        return
+    handlers = app._mcp_server.request_handlers
+    original = handlers[mcp_types.CallToolRequest]
+
+    async def handle_tool_call(request):
+        response = await original(request)
+        result = response.root
+        if isinstance(result, mcp_types.CallToolResult) and not result.isError:
+            if _explicit_failure(result):
+                result.isError = True
+        return response
+
+    handlers[mcp_types.CallToolRequest] = handle_tool_call
+    app._eplan_result_adapter_installed = True
+
+
+def _register_tool(app, name, func, *, trusted=False):
+    """Register a tool with reviewed hints, or conservative extension hints."""
+    before = app._tool_manager.get_tool(name)
+    app.tool(name=name, **policy_options(name, trusted=trusted))(func)
+    after = app._tool_manager.get_tool(name)
+    if before is None and after is not None:
+        categories = getattr(app, "_eplan_registered_categories", None)
+        if categories is None:
+            categories = {}
+            app._eplan_registered_categories = categories
+        categories[name] = category_for(name, trusted=trusted)
+
+
+def apply_tool_policy(app, trusted_extra=None):
+    """Apply conservative hints to all tools, including later registrations.
+
+    The plugin may opt in its own post-build doctor/configuration tools through
+    ``trusted_extra``. Callers must reject name collisions before registration;
+    unfamiliar extension tools are never made read-only based on their names.
+    """
+    trusted_extra = trusted_extra or {}
+    for name, category in trusted_extra.items():
+        if PLUGIN_CATEGORIES.get(name) != category:
+            raise ValueError("Unreviewed plugin tool classification: %s" % name)
+    registered = getattr(app, "_eplan_registered_categories", {})
+    for tool in app._tool_manager.list_tools():
+        category = trusted_extra.get(tool.name, registered.get(tool.name, UNKNOWN_CATEGORY))
+        tool.annotations = annotations_for(category)
+        tool.meta = {**(tool.meta or {}), META_CATEGORY_KEY: category}
 
 
 # ============================================================================
@@ -337,7 +408,7 @@ def _register_core(app, registry, mode):
         if published:
             # Registered raw (not through _json_wrapper): these already return
             # a JSON string, exactly as they did when they were decorated.
-            app.tool(name=tool_name)(func)
+            _register_tool(app, tool_name, func, trusted=True)
 
 
 # ============================================================================
@@ -375,7 +446,9 @@ def register_actions(actions_module, prefix="eplan_", app=None, registry=None, m
                          published=published)
 
         if published and app is not None:
-            app.tool(name=tool_name)(_json_wrapper(func))
+            trusted = (actions_module is eplan_actions or
+                       getattr(actions_module, "__name__", "") == "api.aas")
+            _register_tool(app, tool_name, _json_wrapper(func), trusted=trusted)
 
 
 # ============================================================================
@@ -486,8 +559,10 @@ def build_app(mode="full", app=None, registry=None):
         for attr, func in meta.items():
             tool_name = "eplan_" + attr
             registry.add(tool_name, meta_ns, attr, prefix="eplan_", published=True)
-            app.tool(name=tool_name)(_json_wrapper(func))
+            _register_tool(app, tool_name, _json_wrapper(func), trusted=True)
 
+    apply_tool_policy(app)
+    install_result_adapter(app)
     strip_schema_boilerplate(app)
 
     return app, registry, loaded

@@ -8,7 +8,7 @@
 - **文档 MCP**：P8 2026 语义搜索、P8 2027 关键词搜索与 EEC Pro 文档搜索，连接 Canary E-cad 托管的服务。
 - **四个技能**：EPLAN 路由、P8 脚本/API/Remote Client、EEC Pro 开发和本地安装配置。
 
-本项目面向安装了 EPLAN Electric P8 的 Windows 电脑。本地操作需要 64 位 Python 3.10 或更新版本、EPLAN 安装及对应功能的授权，并须启用 EPLAN Remote Client；仅查阅技能和远端文档不要求运行本地 EPLAN。实际功能依赖 EPLAN 版本和本机环境。
+本项目面向 Windows 电脑，运行 MCP 需要 64 位 Python 3.11 或更新版本并安装依赖。本地工程操作还需要 EPLAN、对应功能授权和 Remote Client；查阅技能或文档不要求运行 EPLAN。
 
 ## 安装
 
@@ -34,9 +34,18 @@ cd EPLAN_Skills
 powershell -ExecutionPolicy Bypass -File .\plugins\eplan-skills\scripts\setup.ps1
 ```
 
-也可以运行已安装插件目录中的 `scripts/setup.ps1`，或者让支持技能的客户端使用 `eplan-setup` 技能辅助定位脚本。脚本默认将 Python 环境安装在 `%LOCALAPPDATA%\EPLAN_Skills\venv`；运行安装脚本和客户端前设置 `EPLAN_SKILLS_DATA_DIR` 可改用其他数据目录。安装完成后重启客户端或开启新会话，使 MCP 重新启动。
+也可以运行已安装插件目录中的 `scripts/setup.ps1`，或使用 `eplan-setup` 技能。v0.2.0 起，按完整依赖锁创建 `%LOCALAPPDATA%\EPLAN_Skills\environments\` 下的独立环境，核对 wheel 哈希及健康状态后才启用。旧环境与 v0.1.x 的 `venv` 会保留。设置 `EPLAN_SKILLS_DATA_DIR` 可改变数据目录；安装与启动时应保持一致。升级后重新执行一次 setup，再重启插件或新建会话。
 
 在 EPLAN 的 **文件 → 设置 → 工作站 → 接口 → 远程访问** 中启用 Remote Client 远程访问，然后启动 EPLAN。可以先让助手列出已安装版本、连接 EPLAN 并读取连接状态。修改项目前请确认目标项目和保存状态；先用测试项目验证工作流。更多配置和排错见 [使用说明](docs/usage.md)。
+
+## 中文诊断与文档开关
+
+- `eplan_doctor`：只读汇总 Python/CLR、EPLAN 版本、进程、实际监听地址、代理例外及连接状态，不会自动连接。
+- `eplan_connection_configure`：用户明确要求保存连接时，先隔离验证连接与心跳，成功后保存本机配置；失败保留旧配置。
+- `eplan_documentation_configure`：选择 `all`、`p8`、`p8-keyword`、`eec` 或 `offline`，重启 MCP 刷新工具列表。默认全部启用；禁用服务不连接远端，远端故障不终止本机 MCP。
+- 工具保留 `full` 默认，并提供只读、工程修改、任意执行、文件操作等分类提示。授权仍由宿主处理。
+
+运行管理参考了 [Bochica](https://github.com/Canary-ECAD/bochica)；聊天界面、模型和会话管理继续由 Codex / Claude Code 提供。
 
 ## 来源与许可
 
@@ -52,7 +61,8 @@ powershell -ExecutionPolicy Bypass -File .\plugins\eplan-skills\scripts\setup.ps
 
 ```powershell
 python -m venv .venv
-.\.venv\Scripts\python.exe -m pip install -r requirements-dev.txt -r plugins/eplan-skills/vendor/eplan-mcp/eplan-p8-mcp-server/mcp_server/requirements.txt
+.\.venv\Scripts\python.exe -m pip install --require-hashes -r plugins/eplan-skills/requirements/runtime.lock
+.\.venv\Scripts\python.exe -m pip install -r requirements-dev.txt
 .\.venv\Scripts\python.exe scripts/validate.py
 .\.venv\Scripts\python.exe -m pytest tests plugins/eplan-skills/vendor/eplan-mcp/eplan-p8-mcp-server/tests -m "not live" -q
 .\.venv\Scripts\python.exe scripts/package.py

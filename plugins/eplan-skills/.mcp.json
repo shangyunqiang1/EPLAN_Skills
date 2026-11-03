@@ -8,16 +8,31 @@
       ]
     },
     "eplan-rag": {
-      "type": "http",
-      "url": "https://rag2026.covaga.xyz/mcp"
+      "type": "stdio",
+      "command": "python",
+      "args": [
+        "${PLUGIN_ROOT}/scripts/documentation.py",
+        "--server",
+        "eplan-rag"
+      ]
     },
     "eplan-wiki-2027": {
-      "type": "http",
-      "url": "https://rag2027.covaga.xyz/mcp"
+      "type": "stdio",
+      "command": "python",
+      "args": [
+        "${PLUGIN_ROOT}/scripts/documentation.py",
+        "--server",
+        "eplan-wiki-2027"
+      ]
     },
     "eecpro-rag": {
-      "type": "http",
-      "url": "https://rageecpro.covaga.xyz/mcp"
+      "type": "stdio",
+      "command": "python",
+      "args": [
+        "${PLUGIN_ROOT}/scripts/documentation.py",
+        "--server",
+        "eecpro-rag"
+      ]
     }
   }
 }

@@ -1,0 +1,4 @@
+-r runtime.in
+sentence-transformers==6.2.0
+pillow==13.0.0
+requests==2.34.2

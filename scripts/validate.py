@@ -52,8 +52,10 @@ def validate():
         assert legacy["eplan"]["args"] == [variable + "/scripts/run_mcp.py"]
         assert set(legacy) == set(servers)
         for name in set(servers) - {"eplan"}:
-            assert legacy[name]["url"] == servers[name]["url"]
-            assert legacy[name]["type"] == "http"
+            assert servers[name]["type"] == legacy[name]["type"] == "stdio"
+            expected = [variable + "/scripts/documentation.py", "--server", name]
+            assert legacy[name]["args"] == expected
+            assert servers[name]["args"] == ["${PLUGIN_ROOT}/scripts/documentation.py", "--server", name]
     marketplace = read_json(ROOT / ".agents/plugins/marketplace.json")
     entry, = marketplace["plugins"]
     assert (ROOT / entry["source"]["path"]).resolve() == PLUGIN.resolve()
@@ -65,6 +67,12 @@ def validate():
     for item in lock["files"]:
         path = PLUGIN / item["path"]
         assert hashlib.sha256(path.read_bytes().replace(b"\r\n", b"\n")).hexdigest() == item["bundledSha256"], path
+    for item in lock.get("integrationFiles", []):
+        path = PLUGIN / item["path"]
+        assert hashlib.sha256(path.read_bytes().replace(b"\r\n", b"\n")).hexdigest() == item["sha256"], path
+    for filename in ["runtime.lock", "symbols.lock"]:
+        dependency_lock = (PLUGIN / "requirements" / filename).read_text(encoding="utf-8")
+        assert "--hash=sha256:" in dependency_lock and "==" in dependency_lock
     for path in PLUGIN.rglob("*"):
         assert not path.is_symlink(), path
         if path.is_file():

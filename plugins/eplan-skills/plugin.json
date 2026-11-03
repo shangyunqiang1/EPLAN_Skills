@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "eplan-skills",
-  "version": "0.1.2",
+  "version": "0.2.0",
   "description": "EPLAN 电气设计自动化插件：整合 Canary-ECAD MCP、P8 脚本/API、EEC Pro 开发技能与文档检索。 | EPLAN automation MCP and skills integrated from Canary-ECAD.",
   "author": {
     "name": "shangyunqiang1",
@@ -24,8 +24,8 @@
     "com.openai": {
       "interface": {
         "displayName": "EPLAN_Skills",
-        "shortDescription": "EPLAN 自动化、脚本与文档助手",
-        "longDescription": "面向 EPLAN 电气设计与开发的社区整合插件。包含本机 EPLAN 自动化 MCP、Electric P8 的 C# 脚本/API/Remote Client 开发技能、EEC Pro 建模与生成技能，以及 P8 2026、P8 2027 和 EEC Pro 文档检索。提供中文安装配置与使用说明，支持 Codex 和 Claude Code。本机自动化需要 Windows、已安装且具备对应功能授权的 EPLAN，并启用 Remote Client；文档检索连接 Canary E-cad 托管的第三方服务。核心工具与技能来自 Canary-ECAD / Christian D. Lopez，保留 MIT 许可和来源记录。\n\nCommunity integration of Canary-ECAD EPLAN automation MCP, Electric P8 scripting/API/Remote Client skills, EEC Pro development skills and hosted documentation search. Requires Windows and a licensed local EPLAN installation for automation.",
+        "shortDescription": "EPLAN 自动化、诊断与文档助手",
+        "longDescription": "提供 EPLAN MCP、P8 脚本/API/Remote Client 与 EEC Pro 开发技能。支持中文连接诊断、验证后保存连接、固定依赖独立安装、工具能力分类，以及按需启用 P8 2026/2027 和 EEC Pro 文档服务。查询通过本机网关转发至 Canary E-cad 托管服务。需要 Windows x64、Python 3.11+ 和依赖安装；工程操作另需 EPLAN 对应授权及 Remote Client。核心来源为 Canary-ECAD / Christian D. Lopez，保留 MIT 与来源记录。\n\nEPLAN MCP and development skills with verified runtime environments, diagnostics, capability annotations and selectable documentation gateways. Integrated from Canary-ECAD; MIT attribution retained.",
         "developerName": "shangyunqiang1",
         "category": "Developer Tools",
         "capabilities": [
