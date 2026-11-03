@@ -9,7 +9,7 @@ import shutil
 import socket
 import subprocess
 import sys
-import tempfile
+import uuid
 
 sys.dont_write_bytecode = True
 sys.path.insert(0, str(Path(__file__).resolve().parent))
@@ -36,7 +36,10 @@ def prepare_runtime() -> Path:
     if destination.is_dir():
         return destination
     base.mkdir(parents=True, exist_ok=True)
-    staging = Path(tempfile.mkdtemp(prefix="staging-", dir=base))
+    # Inherit the user's data-directory ACL. Python 3.13's Windows mode-0700
+    # temporary directories can deny rename under restricted user tokens.
+    staging = base / ("staging-" + uuid.uuid4().hex)
+    staging.mkdir()
     try:
         shutil.copytree(SERVER_ROOT, staging, dirs_exist_ok=True,
                         ignore=shutil.ignore_patterns("__pycache__", "*.pyc", ".pytest_cache", "logs"))
@@ -47,6 +50,8 @@ def prepare_runtime() -> Path:
                 raise
     finally:
         if staging.exists():
+            if staging.resolve().parent != base.resolve():
+                raise ValueError("Staging directory escaped the runtime directory")
             shutil.rmtree(staging)
     return destination
 
