@@ -6,6 +6,7 @@ import hashlib
 import os
 from pathlib import Path
 import shutil
+import socket
 import subprocess
 import sys
 import tempfile
@@ -46,6 +47,19 @@ def prepare_runtime() -> Path:
     return destination
 
 
+def configure_local_grpc_proxy() -> None:
+    # EPLAN's native gRPC library honors http_proxy. Exempt this workstation
+    # only; leave HTTP documentation clients and remote EPLAN hosts unchanged.
+    hosts = {"localhost", "127.0.0.1", "::1"}
+    try:
+        hosts.update(socket.gethostbyname_ex(socket.gethostname())[2])
+    except OSError:
+        pass
+    existing = os.environ.get("no_grpc_proxy", os.environ.get("NO_GRPC_PROXY", ""))
+    entries = [value.strip() for value in existing.split(",") if value.strip()]
+    os.environ["no_grpc_proxy"] = ",".join(dict.fromkeys(entries + sorted(hosts)))
+
+
 def main() -> int:
     if sys.platform != "win32":
         print("Local EPLAN automation requires Windows; documentation MCPs are remote.", file=sys.stderr)
@@ -62,6 +76,7 @@ def main() -> int:
     os.environ.setdefault("EPLAN_MCP_LOG_DIR", str(data_dir() / "logs"))
     os.environ["PYTHONDONTWRITEBYTECODE"] = "1"
     sys.dont_write_bytecode = True
+    configure_local_grpc_proxy()
     runtime_root = prepare_runtime()
     if os.environ.get("EPLAN_SKILLS_SYMBOL_SEARCH") == "1":
         extension = str(runtime_root / "extensions")

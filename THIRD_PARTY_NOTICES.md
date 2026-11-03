@@ -11,7 +11,7 @@ EPLAN_Skills 是由 shangyunqiang1 维护的社区整合插件。核心 EPLAN MC
 
 以上四个仓库均为 **MIT**，`Copyright (c) 2025 Christian D. Lopez`。原始许可全文保留在插件 `licenses/` 内；MCP vendor 中也保留原 `LICENSE`。插件内 `upstream-lock.json` 记录提交、映射和逐文件 SHA256（文本换行先统一为 LF，以兼容 Windows Git 换行转换）：`upstreamSha256` 对应固定上游文件，`bundledSha256` 对应随包文件，两者不同表示本集成做过适配。
 
-本集成新增：统一插件及 marketplace 清单、扁平 skill 布局、中文 setup/router、Windows 外部 venv 与 stdio 启动器、验证/打包脚本和 CI。上游 MCP 源码保持原样；技能中有关授权的表述改为遵循用户本机 EPLAN 许可，技术可访问性不代表授权。文件路径与跨 skill 引用按打包结构适配。
+本集成新增：统一插件及 marketplace 清单、扁平 skill 布局、中文 setup/router、Windows 外部 venv 与 stdio 启动器、验证/打包脚本和 CI。v0.1.1 在上游 `eplan_connection.py` 的延迟 CLR 初始化之后将 .NET Console 输出转到 stderr，以保持 MCP stdout 纯净；其余 MCP 源码保持原样。技能中有关授权的表述改为遵循用户本机 EPLAN 许可，技术可访问性不代表授权。文件路径与跨 skill 引用按打包结构适配。
 
 远端服务由上游运营，服务可用性、数据范围和运营策略由其维护者控制。本仓库没有迁移、托管或接管这些服务。符号搜索使用上游公开端点和可选 CLIP 依赖；模型及 Python 依赖有各自许可证，不包含在本仓库 MIT 授权范围内。
 

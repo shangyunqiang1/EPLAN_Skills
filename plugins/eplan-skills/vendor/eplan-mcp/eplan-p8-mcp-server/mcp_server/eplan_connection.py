@@ -102,6 +102,17 @@ def _select_dotnet_runtime(runtime: str) -> None:
         logger.warning(f"pythonnet: runtime selection failed ({_pnet_err})")
 
 
+def _redirect_dotnet_console() -> None:
+    """Keep CLR diagnostics off the MCP protocol's stdout stream.
+
+    Call only after selecting and loading the CLR: importing System earlier
+    would select a runtime before the requested EPLAN version is known.
+    """
+    from System import Console
+
+    Console.SetOut(Console.Error)
+
+
 EPLAN_EXE_NAME = "EPLAN.exe"
 
 # Severity ranking for the message slice, most important first.
@@ -336,6 +347,7 @@ class EPLANConnectionManager:
             _select_dotnet_runtime(chosen["runtime"])
 
             import clr
+            _redirect_dotnet_console()
 
             eplan_path = chosen["bin"]
 

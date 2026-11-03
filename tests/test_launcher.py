@@ -67,3 +67,24 @@ def test_generated_files_stay_in_data_runtime(tmp_path, monkeypatch):
     assert not (source / "mcp_server/generated.cs").exists()
     assert launcher.prepare_runtime() == runtime
     assert (runtime / "mcp_server/server.py").read_text() == "# source\n"
+
+
+def test_native_grpc_bypasses_only_local_addresses_and_keeps_http_proxy(monkeypatch):
+    monkeypatch.setattr(launcher.socket, "gethostname", lambda: "workstation")
+    monkeypatch.setattr(launcher.socket, "gethostbyname_ex", lambda host: (host, [], ["10.20.30.40"]))
+    monkeypatch.setenv("no_grpc_proxy", "existing.internal")
+    monkeypatch.setenv("http_proxy", "http://example.invalid:8080")
+    monkeypatch.setenv("NO_PROXY", "existing.http")
+    launcher.configure_local_grpc_proxy()
+    assert set(launcher.os.environ["no_grpc_proxy"].split(",")) == {"existing.internal", "localhost", "127.0.0.1", "::1", "10.20.30.40"}
+    assert launcher.os.environ["http_proxy"] == "http://example.invalid:8080"
+    assert launcher.os.environ["NO_PROXY"] == "existing.http"
+
+
+def test_local_proxy_bypass_survives_hostname_resolution_failure(monkeypatch):
+    def fail(host):
+        raise OSError("No address")
+    monkeypatch.setattr(launcher.socket, "gethostbyname_ex", fail)
+    monkeypatch.setenv("no_grpc_proxy", "")
+    launcher.configure_local_grpc_proxy()
+    assert set(launcher.os.environ["no_grpc_proxy"].split(",")) == {"localhost", "127.0.0.1", "::1"}

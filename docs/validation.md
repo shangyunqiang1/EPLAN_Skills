@@ -1,4 +1,16 @@
-# v0.1.0 验证记录
+# 验证记录
+
+## v0.1.1 安装与实机验证 — 2026-11-03
+
+- 当前用户 Codex 安装并启用插件，依赖安装至用户数据目录。
+- EPLAN 2025.0.3 实机已成功完成 Remote Client 连接、ping 和只读当前项目查询（`selectionset /TYPE:PROJECT`）。发现本机服务只监听网卡地址，需显式指定已确认的本机地址和端口。
+- 实机验证发现原生 gRPC 受 HTTP 代理影响；增加仅针对本机地址的 `no_grpc_proxy` 例外后连接成功。例外仅作用于 MCP 子进程，不改变系统或文档 HTTP 请求配置。
+- 连接时 EPLAN Remote Client 的 .NET Console 诊断曾混入 stdout；v0.1.1 在延迟初始化 CLR 后将 Console 输出导向 stderr，实机连接复测没有 JSON-RPC 解析错误。新增真实 CLR 子进程回归测试。
+- 离线测试：**1391 passed, 3 skipped, 8 deselected**。
+- 三个文档 MCP 均完成实际示例检索并返回结果，不含私人项目数据。
+- 本轮没有编辑、关闭、保存工程，也没有验证工程写入、导出或 EEC Pro 生成。
+
+## v0.1.0
 
 日期：2026-11-03。环境：Windows x64、Python 3.13、MCP SDK 1.30.0、pythonnet 3.2.1、basyx-python-sdk 2.2.0。
 

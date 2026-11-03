@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.1.1 — 2026-11-03
+
+- 实机验证后修复 EPLAN 原生 .NET Console 输出混入 stdio MCP 协议的问题。
+- 在 MCP 进程内为本机地址设置 gRPC 代理例外，避免本地 EPLAN 连接经过 HTTP 代理；保留现有例外和 HTTP 配置。
+- 补充真实 CLR 输出隔离测试与本机监听地址连接说明。
+
 ## 0.1.0 — 2026-11-03
 
 - 整合 Canary-ECAD 的本地 EPLAN MCP、P8 与 EEC Pro 技能，以及三个托管文档 MCP。

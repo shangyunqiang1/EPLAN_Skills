@@ -9,7 +9,7 @@
       "name": "eplan-skills",
       "source": "./plugins/eplan-skills",
       "description": "Canary-ECAD EPLAN MCP and skills integration",
-      "version": "0.1.0",
+      "version": "0.1.1",
       "author": {
         "name": "shangyunqiang1",
         "url": "https://github.com/shangyunqiang1"

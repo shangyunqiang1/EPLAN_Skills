@@ -410,7 +410,7 @@
       "upstreamPath": "eplan-p8-mcp-server/mcp_server/eplan_connection.py",
       "path": "vendor/eplan-mcp/eplan-p8-mcp-server/mcp_server/eplan_connection.py",
       "upstreamSha256": "7ef672a5392e393261fa9d6e07a1593f01777e5603136d8475c821898f5e137a",
-      "bundledSha256": "7ef672a5392e393261fa9d6e07a1593f01777e5603136d8475c821898f5e137a"
+      "bundledSha256": "c2a6c4380e1b355bb2345ff5a8aeda2e1b6d745c8e09076942d7b9b4b62ba856"
     },
     {
       "source": "eplan-mcp",
