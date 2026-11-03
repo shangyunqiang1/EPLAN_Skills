@@ -9,7 +9,7 @@ import subprocess
 import sys
 
 sys.dont_write_bytecode = True
-from runtime_environment import atomic_json, find_environment
+from runtime_environment import atomic_json, find_environment, configure_console
 
 SERVICES = {
     "eplan-rag": ("https://rag2026.covaga.xyz/mcp", "P8 2026", {"eplan_search", "eplan_stats"}),
@@ -140,6 +140,7 @@ async def serve(name, root):
 
 
 def main():
+    configure_console()
     parser = argparse.ArgumentParser()
     parser.add_argument("--server", choices=SERVICES)
     parser.add_argument("--profile", choices=PROFILES)

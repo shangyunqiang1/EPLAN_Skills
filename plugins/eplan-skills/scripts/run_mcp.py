@@ -13,7 +13,7 @@ import tempfile
 
 sys.dont_write_bytecode = True
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from runtime_environment import find_environment
+from runtime_environment import find_environment, configure_console
 
 PLUGIN_ROOT = Path(__file__).resolve().parents[1]
 SERVER_ROOT = PLUGIN_ROOT / "vendor/eplan-mcp/eplan-p8-mcp-server"
@@ -65,6 +65,7 @@ def configure_local_grpc_proxy() -> None:
 
 
 def main() -> int:
+    configure_console()
     if sys.platform != "win32":
         print("Local EPLAN automation requires Windows; documentation MCPs are remote.", file=sys.stderr)
         return 1

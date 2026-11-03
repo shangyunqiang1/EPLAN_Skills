@@ -1,5 +1,6 @@
 import importlib.util
 import json
+import os
 from pathlib import Path
 import subprocess
 import sys
@@ -76,3 +77,11 @@ def test_lock_changes_and_path_escape_are_not_trusted(fixture_runtime):
     runtime.atomic_json(root / "active-environments.json", {"core": "../../outside"})
     assert runtime.find_environment(root) is None
     assert not (root.parent / "outside").exists()
+
+
+def test_chinese_cli_output_works_with_english_windows_encoding():
+    script = "import sys; sys.path.insert(0,sys.argv[1]); from runtime_environment import configure_console; configure_console(); print('中文安装成功'); print('中文诊断',file=sys.stderr)"
+    result = subprocess.run([sys.executable, "-c", script, str(ROOT / "plugins/eplan-skills/scripts")],
+        capture_output=True, encoding="utf-8", timeout=15, check=True,
+        env=dict(os.environ, PYTHONIOENCODING="cp1252", PYTHONUTF8="0"))
+    assert "中文安装成功" in result.stdout and "中文诊断" in result.stderr

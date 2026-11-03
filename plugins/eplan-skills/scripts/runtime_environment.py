@@ -18,6 +18,16 @@ PLUGIN_ROOT = Path(__file__).resolve().parents[1]
 PROFILES = {"core": "runtime.lock", "symbols": "symbols.lock"}
 
 
+def configure_console():
+    """Keep Chinese diagnostics usable on English Windows and redirected logs."""
+    os.environ["PYTHONIOENCODING"] = "utf-8"
+    os.environ["PYTHONUTF8"] = "1"
+    for stream in (sys.stdout, sys.stderr):
+        reconfigure = getattr(stream, "reconfigure", None)
+        if reconfigure is not None:
+            reconfigure(encoding="utf-8", errors="backslashreplace")
+
+
 def lock_file(profile="core"):
     return PLUGIN_ROOT / "requirements" / PROFILES[profile]
 
@@ -154,6 +164,7 @@ def install_environment(data_root, profile="core"):
 
 
 def main():
+    configure_console()
     parser = argparse.ArgumentParser()
     parser.add_argument("--data-dir", required=True)
     parser.add_argument("--symbols", action="store_true")
