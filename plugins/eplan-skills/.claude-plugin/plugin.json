@@ -1,0 +1,21 @@
+{
+  "name": "eplan-skills",
+  "version": "0.1.0",
+  "description": "EPLAN automation MCP and development skills integrated from Canary-ECAD.",
+  "author": {
+    "name": "shangyunqiang1",
+    "url": "https://github.com/shangyunqiang1"
+  },
+  "homepage": "https://github.com/shangyunqiang1/EPLAN_Skills",
+  "repository": "https://github.com/shangyunqiang1/EPLAN_Skills",
+  "license": "MIT",
+  "keywords": [
+    "eplan",
+    "mcp",
+    "eec-pro",
+    "csharp",
+    "electrical-engineering"
+  ],
+  "skills": "./skills/",
+  "mcpServers": "./mcp-claude.json"
+}

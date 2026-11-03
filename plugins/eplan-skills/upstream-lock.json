@@ -1,0 +1,1039 @@
+{
+  "hashNormalization": "text-crlf-to-lf",
+  "sources": [
+    {
+      "repository": "https://github.com/Canary-ECAD/eplan-mcp",
+      "commit": "896e2bf9217f3d9fb28c9f5c26cf00181f37cc73",
+      "license": "MIT",
+      "copyright": "Copyright (c) 2025 Christian D. Lopez"
+    },
+    {
+      "repository": "https://github.com/Canary-ECAD/eplan-scripting-skill",
+      "commit": "11da792a7bfc9d001c56b665941bfaa9e49cb8e2",
+      "license": "MIT",
+      "copyright": "Copyright (c) 2025 Christian D. Lopez"
+    },
+    {
+      "repository": "https://github.com/Canary-ECAD/eec-pro-skill",
+      "commit": "2324e40db072621dd8cc14168406e013eecc055d",
+      "license": "MIT",
+      "copyright": "Copyright (c) 2025 Christian D. Lopez"
+    },
+    {
+      "repository": "https://github.com/Canary-ECAD/eplan-cloudflare-rags",
+      "commit": "5fe2c52098b1f2844fb8124b71eb5137d19e7123",
+      "license": "MIT",
+      "copyright": "Copyright (c) 2025 Christian D. Lopez"
+    }
+  ],
+  "files": [
+    {
+      "source": "eplan-mcp",
+      "upstreamPath": "eplan-p8-mcp-server/ACTION_COVERAGE.md",
+      "path": "vendor/eplan-mcp/eplan-p8-mcp-server/ACTION_COVERAGE.md",
+      "upstreamSha256": "31c5cd7ecab0c48a8b056ec4337a9cbc2aa3987e3f63102d1bf1768bd1177bd9",
+      "bundledSha256": "31c5cd7ecab0c48a8b056ec4337a9cbc2aa3987e3f63102d1bf1768bd1177bd9"
+    },
+    {
+      "source": "eplan-mcp",
+      "upstreamPath": "eplan-p8-mcp-server/extensions/symbol_search.py",
+      "path": "vendor/eplan-mcp/eplan-p8-mcp-server/extensions/symbol_search.py",
+      "upstreamSha256": "cbd2d7e4f82e73eb8860e8f9cf468c2f3f6a69fc2a36c3d87bf783576cdfff58",
+      "bundledSha256": "cbd2d7e4f82e73eb8860e8f9cf468c2f3f6a69fc2a36c3d87bf783576cdfff58"
+    },
+    {
+      "source": "eplan-mcp",
+      "upstreamPath": "eplan-p8-mcp-server/mcp_server/api/__init__.py",
+      "path": "vendor/eplan-mcp/eplan-p8-mcp-server/mcp_server/api/__init__.py",
+      "upstreamSha256": "1e2e81d37583f22561dfc0a30514a37b0a903d3dd05fe15ee56811b002e512b2",
+      "bundledSha256": "1e2e81d37583f22561dfc0a30514a37b0a903d3dd05fe15ee56811b002e512b2"
+    },
+    {
+      "source": "eplan-mcp",
+      "upstreamPath": "eplan-p8-mcp-server/mcp_server/api/aas/__init__.py",
+      "path": "vendor/eplan-mcp/eplan-p8-mcp-server/mcp_server/api/aas/__init__.py",
+      "upstreamSha256": "9c7f6d1f4a82562b04dcb1713e086b5649f650c750f0db2e4481484d227ff500",
+      "bundledSha256": "9c7f6d1f4a82562b04dcb1713e086b5649f650c750f0db2e4481484d227ff500"
+    },
+    {
+      "source": "eplan-mcp",
+      "upstreamPath": "eplan-p8-mcp-server/mcp_server/api/aas/builder.py",
+      "path": "vendor/eplan-mcp/eplan-p8-mcp-server/mcp_server/api/aas/builder.py",
+      "upstreamSha256": "0b099b5e8534f8fba9b00478557a9d99141a7fdfa311c6dad9982ea4ae16067f",
+      "bundledSha256": "0b099b5e8534f8fba9b00478557a9d99141a7fdfa311c6dad9982ea4ae16067f"
+    },
+    {
+      "source": "eplan-mcp",
+      "upstreamPath": "eplan-p8-mcp-server/mcp_server/api/aas/client.py",
+      "path": "vendor/eplan-mcp/eplan-p8-mcp-server/mcp_server/api/aas/client.py",
+      "upstreamSha256": "70915acf07d769ec91ab957518db69bba3dab51ed9ceeb984e8338547f3d0fa7",
+      "bundledSha256": "70915acf07d769ec91ab957518db69bba3dab51ed9ceeb984e8338547f3d0fa7"
+    },
+    {
+      "source": "eplan-mcp",
+      "upstreamPath": "eplan-p8-mcp-server/mcp_server/api/aas/export_.py",
+      "path": "vendor/eplan-mcp/eplan-p8-mcp-server/mcp_server/api/aas/export_.py",
+      "upstreamSha256": "edbfe90a3c5e686a15fd8352cfaa6590d715df61c4db64341343b823d70eb86c",
+      "bundledSha256": "edbfe90a3c5e686a15fd8352cfaa6590d715df61c4db64341343b823d70eb86c"
+    },
+    {
+      "source": "eplan-mcp",
+      "upstreamPath": "eplan-p8-mcp-server/mcp_server/api/aas/import_.py",
+      "path": "vendor/eplan-mcp/eplan-p8-mcp-server/mcp_server/api/aas/import_.py",
+      "upstreamSha256": "23efd83a7aa57b1d0c8d23fcbf96d8e6047c7f39ee59f104cc239b87b79b18c0",
+      "bundledSha256": "23efd83a7aa57b1d0c8d23fcbf96d8e6047c7f39ee59f104cc239b87b79b18c0"
+    },
+    {
+      "source": "eplan-mcp",
+      "upstreamPath": "eplan-p8-mcp-server/mcp_server/api/aas/mapping.py",
+      "path": "vendor/eplan-mcp/eplan-p8-mcp-server/mcp_server/api/aas/mapping.py",
+      "upstreamSha256": "f879647c6d30ad470f589e580a1d9b9fbdf317e0ea4c303d3fc529b341e04173",
+      "bundledSha256": "f879647c6d30ad470f589e580a1d9b9fbdf317e0ea4c303d3fc529b341e04173"
+    },
+    {
+      "source": "eplan-mcp",
+      "upstreamPath": "eplan-p8-mcp-server/mcp_server/api/actions/__init__.py",
+      "path": "vendor/eplan-mcp/eplan-p8-mcp-server/mcp_server/api/actions/__init__.py",
+      "upstreamSha256": "10b95465e75e5667ca2f0cf46bf2501e244e6a5844dbdac78286c3feebe36677",
+      "bundledSha256": "10b95465e75e5667ca2f0cf46bf2501e244e6a5844dbdac78286c3feebe36677"
+    },
+    {
+      "source": "eplan-mcp",
+      "upstreamPath": "eplan-p8-mcp-server/mcp_server/api/actions/_base.py",
+      "path": "vendor/eplan-mcp/eplan-p8-mcp-server/mcp_server/api/actions/_base.py",
+      "upstreamSha256": "79a0af8a60f64c52deb75c776535755abc944a046ed3d493d849296c042f3bdd",
+      "bundledSha256": "79a0af8a60f64c52deb75c776535755abc944a046ed3d493d849296c042f3bdd"
+    },
+    {
+      "source": "eplan-mcp",
+      "upstreamPath": "eplan-p8-mcp-server/mcp_server/api/actions/_project_cache.py",
+      "path": "vendor/eplan-mcp/eplan-p8-mcp-server/mcp_server/api/actions/_project_cache.py",
+      "upstreamSha256": "2555238a3988b8c751f432b6613f53abf5a1df144bf4a2db9e168bc4a43fdb95",
+      "bundledSha256": "2555238a3988b8c751f432b6613f53abf5a1df144bf4a2db9e168bc4a43fdb95"
+    },
+    {
+      "source": "eplan-mcp",
+      "upstreamPath": "eplan-p8-mcp-server/mcp_server/api/actions/addons.py",
+      "path": "vendor/eplan-mcp/eplan-p8-mcp-server/mcp_server/api/actions/addons.py",
+      "upstreamSha256": "ff3189afbaeb22ca0ef28b332d940377a799e957d2d880d402f2166d48be803c",
+      "bundledSha256": "ff3189afbaeb22ca0ef28b332d940377a799e957d2d880d402f2166d48be803c"
+    },
+    {
+      "source": "eplan-mcp",
+      "upstreamPath": "eplan-p8-mcp-server/mcp_server/api/actions/backup.py",
+      "path": "vendor/eplan-mcp/eplan-p8-mcp-server/mcp_server/api/actions/backup.py",
+      "upstreamSha256": "cda433d731ff12717ca0bfa116cc3774ec547df763493a4f8d51bcd45881832b",
+      "bundledSha256": "cda433d731ff12717ca0bfa116cc3774ec547df763493a4f8d51bcd45881832b"
+    },
+    {
+      "source": "eplan-mcp",
+      "upstreamPath": "eplan-p8-mcp-server/mcp_server/api/actions/cabinet.py",
+      "path": "vendor/eplan-mcp/eplan-p8-mcp-server/mcp_server/api/actions/cabinet.py",
+      "upstreamSha256": "a51dcc9e7e87db04dc6ec55f8bc5f5da779e8f0cbb8790336881cccbe5a9e1b8",
+      "bundledSha256": "a51dcc9e7e87db04dc6ec55f8bc5f5da779e8f0cbb8790336881cccbe5a9e1b8"
+    },
+    {
+      "source": "eplan-mcp",
+      "upstreamPath": "eplan-p8-mcp-server/mcp_server/api/actions/catalog.py",
+      "path": "vendor/eplan-mcp/eplan-p8-mcp-server/mcp_server/api/actions/catalog.py",
+      "upstreamSha256": "788d53b0f7d06a2539a096721f8302565e51a940c271d92423fe740ed6a49a45",
+      "bundledSha256": "788d53b0f7d06a2539a096721f8302565e51a940c271d92423fe740ed6a49a45"
+    },
+    {
+      "source": "eplan-mcp",
+      "upstreamPath": "eplan-p8-mcp-server/mcp_server/api/actions/data/action_registry.json",
+      "path": "vendor/eplan-mcp/eplan-p8-mcp-server/mcp_server/api/actions/data/action_registry.json",
+      "upstreamSha256": "0ca0419bee0982cbc56ce1ad26879f51fe5df873d5a50bbdbe3b461139d9aee3",
+      "bundledSha256": "0ca0419bee0982cbc56ce1ad26879f51fe5df873d5a50bbdbe3b461139d9aee3"
+    },
+    {
+      "source": "eplan-mcp",
+      "upstreamPath": "eplan-p8-mcp-server/mcp_server/api/actions/data_exchange.py",
+      "path": "vendor/eplan-mcp/eplan-p8-mcp-server/mcp_server/api/actions/data_exchange.py",
+      "upstreamSha256": "5bf3b810a109594717f3c03dbd29bdf38f1d98ac06291664c7ba64bc9c06f8be",
+      "bundledSha256": "5bf3b810a109594717f3c03dbd29bdf38f1d98ac06291664c7ba64bc9c06f8be"
+    },
+    {
+      "source": "eplan-mcp",
+      "upstreamPath": "eplan-p8-mcp-server/mcp_server/api/actions/devicelist.py",
+      "path": "vendor/eplan-mcp/eplan-p8-mcp-server/mcp_server/api/actions/devicelist.py",
+      "upstreamSha256": "96ab85607469945b0caec277d9cd63fee108668f71637d2ffb61d22d685da8d6",
+      "bundledSha256": "96ab85607469945b0caec277d9cd63fee108668f71637d2ffb61d22d685da8d6"
+    },
+    {
+      "source": "eplan-mcp",
+      "upstreamPath": "eplan-p8-mcp-server/mcp_server/api/actions/discovery.py",
+      "path": "vendor/eplan-mcp/eplan-p8-mcp-server/mcp_server/api/actions/discovery.py",
+      "upstreamSha256": "dbda49f0e7f65780f7b55b205284391fb59c39cc404b4b9b301caecb29192507",
+      "bundledSha256": "dbda49f0e7f65780f7b55b205284391fb59c39cc404b4b9b301caecb29192507"
+    },
+    {
+      "source": "eplan-mcp",
+      "upstreamPath": "eplan-p8-mcp-server/mcp_server/api/actions/e3d.py",
+      "path": "vendor/eplan-mcp/eplan-p8-mcp-server/mcp_server/api/actions/e3d.py",
+      "upstreamSha256": "35845438984e3a766500fd2ad5c0fd35fb07c5c732989eb208c6ec110daa2bba",
+      "bundledSha256": "35845438984e3a766500fd2ad5c0fd35fb07c5c732989eb208c6ec110daa2bba"
+    },
+    {
+      "source": "eplan-mcp",
+      "upstreamPath": "eplan-p8-mcp-server/mcp_server/api/actions/export_.py",
+      "path": "vendor/eplan-mcp/eplan-p8-mcp-server/mcp_server/api/actions/export_.py",
+      "upstreamSha256": "aa659b45c6ab9fbdf1df23bf48aed9dd4d85225dcb3d72d2178c719666c56dee",
+      "bundledSha256": "aa659b45c6ab9fbdf1df23bf48aed9dd4d85225dcb3d72d2178c719666c56dee"
+    },
+    {
+      "source": "eplan-mcp",
+      "upstreamPath": "eplan-p8-mcp-server/mcp_server/api/actions/fixtures.py",
+      "path": "vendor/eplan-mcp/eplan-p8-mcp-server/mcp_server/api/actions/fixtures.py",
+      "upstreamSha256": "c74e0e3b0b7d19adfc57ec30fab761dd13d9e033a5b72477cc2cd489b35f1809",
+      "bundledSha256": "c74e0e3b0b7d19adfc57ec30fab761dd13d9e033a5b72477cc2cd489b35f1809"
+    },
+    {
+      "source": "eplan-mcp",
+      "upstreamPath": "eplan-p8-mcp-server/mcp_server/api/actions/generate.py",
+      "path": "vendor/eplan-mcp/eplan-p8-mcp-server/mcp_server/api/actions/generate.py",
+      "upstreamSha256": "b3f9117edded2e2ed1ce7e2a12bf3b6a54992d995a3152660fe3bbf7c163ea4f",
+      "bundledSha256": "b3f9117edded2e2ed1ce7e2a12bf3b6a54992d995a3152660fe3bbf7c163ea4f"
+    },
+    {
+      "source": "eplan-mcp",
+      "upstreamPath": "eplan-p8-mcp-server/mcp_server/api/actions/import_.py",
+      "path": "vendor/eplan-mcp/eplan-p8-mcp-server/mcp_server/api/actions/import_.py",
+      "upstreamSha256": "49fd16a1ff256d7eeb2dd7e3bf9a13cdcc0760b7874a2dfc3400b75ce0794b9f",
+      "bundledSha256": "49fd16a1ff256d7eeb2dd7e3bf9a13cdcc0760b7874a2dfc3400b75ce0794b9f"
+    },
+    {
+      "source": "eplan-mcp",
+      "upstreamPath": "eplan-p8-mcp-server/mcp_server/api/actions/interaction.py",
+      "path": "vendor/eplan-mcp/eplan-p8-mcp-server/mcp_server/api/actions/interaction.py",
+      "upstreamSha256": "bc2b24090a3fb867e2bbe936c1f3c6483ff8f9d63183b8a1bf4462523ee1c2e1",
+      "bundledSha256": "bc2b24090a3fb867e2bbe936c1f3c6483ff8f9d63183b8a1bf4462523ee1c2e1"
+    },
+    {
+      "source": "eplan-mcp",
+      "upstreamPath": "eplan-p8-mcp-server/mcp_server/api/actions/introspect.py",
+      "path": "vendor/eplan-mcp/eplan-p8-mcp-server/mcp_server/api/actions/introspect.py",
+      "upstreamSha256": "0b34e1f977c30e6e06b63541f30db746282e49cbfb5720fcb37eedbe297d7d18",
+      "bundledSha256": "0b34e1f977c30e6e06b63541f30db746282e49cbfb5720fcb37eedbe297d7d18"
+    },
+    {
+      "source": "eplan-mcp",
+      "upstreamPath": "eplan-p8-mcp-server/mcp_server/api/actions/labels.py",
+      "path": "vendor/eplan-mcp/eplan-p8-mcp-server/mcp_server/api/actions/labels.py",
+      "upstreamSha256": "bcada3bd4456e1fd07319955fe2251fddd8b99c7677aba30cf39b5d9dc97a045",
+      "bundledSha256": "bcada3bd4456e1fd07319955fe2251fddd8b99c7677aba30cf39b5d9dc97a045"
+    },
+    {
+      "source": "eplan-mcp",
+      "upstreamPath": "eplan-p8-mcp-server/mcp_server/api/actions/layers.py",
+      "path": "vendor/eplan-mcp/eplan-p8-mcp-server/mcp_server/api/actions/layers.py",
+      "upstreamSha256": "df40cb3a9bdb0003ca44c9ef816aaf1580fd890486b8d42f392ac74f99e3e49f",
+      "bundledSha256": "df40cb3a9bdb0003ca44c9ef816aaf1580fd890486b8d42f392ac74f99e3e49f"
+    },
+    {
+      "source": "eplan-mcp",
+      "upstreamPath": "eplan-p8-mcp-server/mcp_server/api/actions/lifecycle.py",
+      "path": "vendor/eplan-mcp/eplan-p8-mcp-server/mcp_server/api/actions/lifecycle.py",
+      "upstreamSha256": "f4cdc6563adf8b0e3a6315c41a390711708497fbbb68d522ea5d63e8608f94bb",
+      "bundledSha256": "f4cdc6563adf8b0e3a6315c41a390711708497fbbb68d522ea5d63e8608f94bb"
+    },
+    {
+      "source": "eplan-mcp",
+      "upstreamPath": "eplan-p8-mcp-server/mcp_server/api/actions/live.py",
+      "path": "vendor/eplan-mcp/eplan-p8-mcp-server/mcp_server/api/actions/live.py",
+      "upstreamSha256": "5bb13e1cd747e1733dfca1a2ed383c31fb0807371d3084fc3b2b442e5442686c",
+      "bundledSha256": "5bb13e1cd747e1733dfca1a2ed383c31fb0807371d3084fc3b2b442e5442686c"
+    },
+    {
+      "source": "eplan-mcp",
+      "upstreamPath": "eplan-p8-mcp-server/mcp_server/api/actions/macros.py",
+      "path": "vendor/eplan-mcp/eplan-p8-mcp-server/mcp_server/api/actions/macros.py",
+      "upstreamSha256": "34d9af76a565479ea8ab3ade3d01bfb98a3c4a0339a4d1af70ebfc20b67066ea",
+      "bundledSha256": "34d9af76a565479ea8ab3ade3d01bfb98a3c4a0339a4d1af70ebfc20b67066ea"
+    },
+    {
+      "source": "eplan-mcp",
+      "upstreamPath": "eplan-p8-mcp-server/mcp_server/api/actions/navigation.py",
+      "path": "vendor/eplan-mcp/eplan-p8-mcp-server/mcp_server/api/actions/navigation.py",
+      "upstreamSha256": "2cb20895d59592a5d89327a446745f69e55e700ab0a6822570a063a2d3bd66a4",
+      "bundledSha256": "2cb20895d59592a5d89327a446745f69e55e700ab0a6822570a063a2d3bd66a4"
+    },
+    {
+      "source": "eplan-mcp",
+      "upstreamPath": "eplan-p8-mcp-server/mcp_server/api/actions/parts.py",
+      "path": "vendor/eplan-mcp/eplan-p8-mcp-server/mcp_server/api/actions/parts.py",
+      "upstreamSha256": "3108c5011faa78b2c4a97433ae08361a0a2a99440202cc3d4b6574852ffd299f",
+      "bundledSha256": "3108c5011faa78b2c4a97433ae08361a0a2a99440202cc3d4b6574852ffd299f"
+    },
+    {
+      "source": "eplan-mcp",
+      "upstreamPath": "eplan-p8-mcp-server/mcp_server/api/actions/partsmanagement.py",
+      "path": "vendor/eplan-mcp/eplan-p8-mcp-server/mcp_server/api/actions/partsmanagement.py",
+      "upstreamSha256": "29e03297e8b9ea3f7154ffdffa6cde58b4b59e28ca0de8643566f2622405b662",
+      "bundledSha256": "29e03297e8b9ea3f7154ffdffa6cde58b4b59e28ca0de8643566f2622405b662"
+    },
+    {
+      "source": "eplan-mcp",
+      "upstreamPath": "eplan-p8-mcp-server/mcp_server/api/actions/planning.py",
+      "path": "vendor/eplan-mcp/eplan-p8-mcp-server/mcp_server/api/actions/planning.py",
+      "upstreamSha256": "f5c5d716c3d6d814c2b62f022a99938291ca834092ea99795cfac67f153aef11",
+      "bundledSha256": "f5c5d716c3d6d814c2b62f022a99938291ca834092ea99795cfac67f153aef11"
+    },
+    {
+      "source": "eplan-mcp",
+      "upstreamPath": "eplan-p8-mcp-server/mcp_server/api/actions/plc.py",
+      "path": "vendor/eplan-mcp/eplan-p8-mcp-server/mcp_server/api/actions/plc.py",
+      "upstreamSha256": "0e62bac8402d552525b4b32c5fa7cbbe6aa0279c21e5d283f17b01acdce21243",
+      "bundledSha256": "0e62bac8402d552525b4b32c5fa7cbbe6aa0279c21e5d283f17b01acdce21243"
+    },
+    {
+      "source": "eplan-mcp",
+      "upstreamPath": "eplan-p8-mcp-server/mcp_server/api/actions/print_.py",
+      "path": "vendor/eplan-mcp/eplan-p8-mcp-server/mcp_server/api/actions/print_.py",
+      "upstreamSha256": "dab3c46486c26896d7ebc6d39392bb35f872d6b0d4f068da7fadaf05cd464b70",
+      "bundledSha256": "dab3c46486c26896d7ebc6d39392bb35f872d6b0d4f068da7fadaf05cd464b70"
+    },
+    {
+      "source": "eplan-mcp",
+      "upstreamPath": "eplan-p8-mcp-server/mcp_server/api/actions/production.py",
+      "path": "vendor/eplan-mcp/eplan-p8-mcp-server/mcp_server/api/actions/production.py",
+      "upstreamSha256": "12d70539793e9851adf37f4a1c91328a480f87be2aaa9a8cc393b3265b8a0b18",
+      "bundledSha256": "12d70539793e9851adf37f4a1c91328a480f87be2aaa9a8cc393b3265b8a0b18"
+    },
+    {
+      "source": "eplan-mcp",
+      "upstreamPath": "eplan-p8-mcp-server/mcp_server/api/actions/project.py",
+      "path": "vendor/eplan-mcp/eplan-p8-mcp-server/mcp_server/api/actions/project.py",
+      "upstreamSha256": "57256a287692f60079dbf99ff5fd3e3a36c6713478d2c3d886cc3231540becb4",
+      "bundledSha256": "57256a287692f60079dbf99ff5fd3e3a36c6713478d2c3d886cc3231540becb4"
+    },
+    {
+      "source": "eplan-mcp",
+      "upstreamPath": "eplan-p8-mcp-server/mcp_server/api/actions/properties.py",
+      "path": "vendor/eplan-mcp/eplan-p8-mcp-server/mcp_server/api/actions/properties.py",
+      "upstreamSha256": "79c2ac2690a1eab773454913a63b6a55f0f3d7ea90ad01eb055d8b5600f540be",
+      "bundledSha256": "79c2ac2690a1eab773454913a63b6a55f0f3d7ea90ad01eb055d8b5600f540be"
+    },
+    {
+      "source": "eplan-mcp",
+      "upstreamPath": "eplan-p8-mcp-server/mcp_server/api/actions/renumber.py",
+      "path": "vendor/eplan-mcp/eplan-p8-mcp-server/mcp_server/api/actions/renumber.py",
+      "upstreamSha256": "3417accfa57163eb1fc65add7247b290373089343b5a779f6ca068c0b21d40fc",
+      "bundledSha256": "3417accfa57163eb1fc65add7247b290373089343b5a779f6ca068c0b21d40fc"
+    },
+    {
+      "source": "eplan-mcp",
+      "upstreamPath": "eplan-p8-mcp-server/mcp_server/api/actions/reports.py",
+      "path": "vendor/eplan-mcp/eplan-p8-mcp-server/mcp_server/api/actions/reports.py",
+      "upstreamSha256": "bb70c05472e155da8fe0112956f7d30921baf503c306a07dad18f808cbf7d55d",
+      "bundledSha256": "bb70c05472e155da8fe0112956f7d30921baf503c306a07dad18f808cbf7d55d"
+    },
+    {
+      "source": "eplan-mcp",
+      "upstreamPath": "eplan-p8-mcp-server/mcp_server/api/actions/ribbon.py",
+      "path": "vendor/eplan-mcp/eplan-p8-mcp-server/mcp_server/api/actions/ribbon.py",
+      "upstreamSha256": "b9f41f9b2a9671991e9d406f6a01691670630508b2efc26023d5380105995d46",
+      "bundledSha256": "b9f41f9b2a9671991e9d406f6a01691670630508b2efc26023d5380105995d46"
+    },
+    {
+      "source": "eplan-mcp",
+      "upstreamPath": "eplan-p8-mcp-server/mcp_server/api/actions/schematic.py",
+      "path": "vendor/eplan-mcp/eplan-p8-mcp-server/mcp_server/api/actions/schematic.py",
+      "upstreamSha256": "22b12ec5bcbec4043d05f65e1efe2b9938776a3036f5f66be96c33cc04755faa",
+      "bundledSha256": "22b12ec5bcbec4043d05f65e1efe2b9938776a3036f5f66be96c33cc04755faa"
+    },
+    {
+      "source": "eplan-mcp",
+      "upstreamPath": "eplan-p8-mcp-server/mcp_server/api/actions/schematic_model.py",
+      "path": "vendor/eplan-mcp/eplan-p8-mcp-server/mcp_server/api/actions/schematic_model.py",
+      "upstreamSha256": "ac1efbbca59e4f94170fb0701360c89e5d39db4cee1e9ac5040023ea4016fa52",
+      "bundledSha256": "ac1efbbca59e4f94170fb0701360c89e5d39db4cee1e9ac5040023ea4016fa52"
+    },
+    {
+      "source": "eplan-mcp",
+      "upstreamPath": "eplan-p8-mcp-server/mcp_server/api/actions/scripted.py",
+      "path": "vendor/eplan-mcp/eplan-p8-mcp-server/mcp_server/api/actions/scripted.py",
+      "upstreamSha256": "cf71a44698b5122f8807c03bf33da822f30940156cedfb461ca9303300cf9204",
+      "bundledSha256": "cf71a44698b5122f8807c03bf33da822f30940156cedfb461ca9303300cf9204"
+    },
+    {
+      "source": "eplan-mcp",
+      "upstreamPath": "eplan-p8-mcp-server/mcp_server/api/actions/scripts.py",
+      "path": "vendor/eplan-mcp/eplan-p8-mcp-server/mcp_server/api/actions/scripts.py",
+      "upstreamSha256": "56d7f41365355933a716734fceae735f93f2b5eeb38dae4bafc1e6a1b760d0cd",
+      "bundledSha256": "56d7f41365355933a716734fceae735f93f2b5eeb38dae4bafc1e6a1b760d0cd"
+    },
+    {
+      "source": "eplan-mcp",
+      "upstreamPath": "eplan-p8-mcp-server/mcp_server/api/actions/search.py",
+      "path": "vendor/eplan-mcp/eplan-p8-mcp-server/mcp_server/api/actions/search.py",
+      "upstreamSha256": "50b4939e3f1db325b2fd2203c749470cdbfd145157e18a388d66ae09667bf21a",
+      "bundledSha256": "50b4939e3f1db325b2fd2203c749470cdbfd145157e18a388d66ae09667bf21a"
+    },
+    {
+      "source": "eplan-mcp",
+      "upstreamPath": "eplan-p8-mcp-server/mcp_server/api/actions/settings.py",
+      "path": "vendor/eplan-mcp/eplan-p8-mcp-server/mcp_server/api/actions/settings.py",
+      "upstreamSha256": "a095718b2ce8a4649f9e20c0635666bf503696baaa67c513f0cd6a237109e540",
+      "bundledSha256": "a095718b2ce8a4649f9e20c0635666bf503696baaa67c513f0cd6a237109e540"
+    },
+    {
+      "source": "eplan-mcp",
+      "upstreamPath": "eplan-p8-mcp-server/mcp_server/api/actions/translate.py",
+      "path": "vendor/eplan-mcp/eplan-p8-mcp-server/mcp_server/api/actions/translate.py",
+      "upstreamSha256": "ae3c105229debaf7c30485582404c13a7b116147cf4e386408ac49303d210329",
+      "bundledSha256": "ae3c105229debaf7c30485582404c13a7b116147cf4e386408ac49303d210329"
+    },
+    {
+      "source": "eplan-mcp",
+      "upstreamPath": "eplan-p8-mcp-server/mcp_server/api/actions/verify.py",
+      "path": "vendor/eplan-mcp/eplan-p8-mcp-server/mcp_server/api/actions/verify.py",
+      "upstreamSha256": "bdf1fe9e99f65bb04c7e9bdd5428cd83df6182262c3854044f82d6fd90cd2064",
+      "bundledSha256": "bdf1fe9e99f65bb04c7e9bdd5428cd83df6182262c3854044f82d6fd90cd2064"
+    },
+    {
+      "source": "eplan-mcp",
+      "upstreamPath": "eplan-p8-mcp-server/mcp_server/api/actions/workspace.py",
+      "path": "vendor/eplan-mcp/eplan-p8-mcp-server/mcp_server/api/actions/workspace.py",
+      "upstreamSha256": "406b82a58bd71c6a67851aaed452a03a433aac29467d8225dd99278232286860",
+      "bundledSha256": "406b82a58bd71c6a67851aaed452a03a433aac29467d8225dd99278232286860"
+    },
+    {
+      "source": "eplan-mcp",
+      "upstreamPath": "eplan-p8-mcp-server/mcp_server/cs_json.py",
+      "path": "vendor/eplan-mcp/eplan-p8-mcp-server/mcp_server/cs_json.py",
+      "upstreamSha256": "613584889545eb22d0de1811bf017eb71a29ac322d3040fc0dab4f9b9d184467",
+      "bundledSha256": "613584889545eb22d0de1811bf017eb71a29ac322d3040fc0dab4f9b9d184467"
+    },
+    {
+      "source": "eplan-mcp",
+      "upstreamPath": "eplan-p8-mcp-server/mcp_server/eplan_connection.py",
+      "path": "vendor/eplan-mcp/eplan-p8-mcp-server/mcp_server/eplan_connection.py",
+      "upstreamSha256": "7ef672a5392e393261fa9d6e07a1593f01777e5603136d8475c821898f5e137a",
+      "bundledSha256": "7ef672a5392e393261fa9d6e07a1593f01777e5603136d8475c821898f5e137a"
+    },
+    {
+      "source": "eplan-mcp",
+      "upstreamPath": "eplan-p8-mcp-server/mcp_server/process_control.py",
+      "path": "vendor/eplan-mcp/eplan-p8-mcp-server/mcp_server/process_control.py",
+      "upstreamSha256": "8a95e2fbc8a7f2dba5ec43f3246567209a2a7549ad38ceb2f19d985e7729c6c1",
+      "bundledSha256": "8a95e2fbc8a7f2dba5ec43f3246567209a2a7549ad38ceb2f19d985e7729c6c1"
+    },
+    {
+      "source": "eplan-mcp",
+      "upstreamPath": "eplan-p8-mcp-server/mcp_server/README.md",
+      "path": "vendor/eplan-mcp/eplan-p8-mcp-server/mcp_server/README.md",
+      "upstreamSha256": "51e4f51393157aa7728167ce030f0562e7e3556b6055359059f564005d08aa96",
+      "bundledSha256": "51e4f51393157aa7728167ce030f0562e7e3556b6055359059f564005d08aa96"
+    },
+    {
+      "source": "eplan-mcp",
+      "upstreamPath": "eplan-p8-mcp-server/mcp_server/requirements.txt",
+      "path": "vendor/eplan-mcp/eplan-p8-mcp-server/mcp_server/requirements.txt",
+      "upstreamSha256": "8d43700e38ba46412e3135844034fffdbf88270fe9d66da17e80b4bb041a6d04",
+      "bundledSha256": "8d43700e38ba46412e3135844034fffdbf88270fe9d66da17e80b4bb041a6d04"
+    },
+    {
+      "source": "eplan-mcp",
+      "upstreamPath": "eplan-p8-mcp-server/mcp_server/scripts/generated/.gitkeep",
+      "path": "vendor/eplan-mcp/eplan-p8-mcp-server/mcp_server/scripts/generated/.gitkeep",
+      "upstreamSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bundledSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "source": "eplan-mcp",
+      "upstreamPath": "eplan-p8-mcp-server/mcp_server/scripts/mcp_test.cs",
+      "path": "vendor/eplan-mcp/eplan-p8-mcp-server/mcp_server/scripts/mcp_test.cs",
+      "upstreamSha256": "d1f2b3f89f3248c9d9b4b66101af1379a889a18db669a134e33730f5b9d93c07",
+      "bundledSha256": "d1f2b3f89f3248c9d9b4b66101af1379a889a18db669a134e33730f5b9d93c07"
+    },
+    {
+      "source": "eplan-mcp",
+      "upstreamPath": "eplan-p8-mcp-server/mcp_server/scripts/results/.gitkeep",
+      "path": "vendor/eplan-mcp/eplan-p8-mcp-server/mcp_server/scripts/results/.gitkeep",
+      "upstreamSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bundledSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "source": "eplan-mcp",
+      "upstreamPath": "eplan-p8-mcp-server/mcp_server/server.py",
+      "path": "vendor/eplan-mcp/eplan-p8-mcp-server/mcp_server/server.py",
+      "upstreamSha256": "b5b6cc304b4ccbe3f895974ae328276664da683af6f6566626d680faf5bbf010",
+      "bundledSha256": "b5b6cc304b4ccbe3f895974ae328276664da683af6f6566626d680faf5bbf010"
+    },
+    {
+      "source": "eplan-mcp",
+      "upstreamPath": "eplan-p8-mcp-server/mcp_server/tool_registry.py",
+      "path": "vendor/eplan-mcp/eplan-p8-mcp-server/mcp_server/tool_registry.py",
+      "upstreamSha256": "6c2abe8e656a1d930e3ff2dbbcfe2701e18435cf2ddabc8acbe092d7ae105851",
+      "bundledSha256": "6c2abe8e656a1d930e3ff2dbbcfe2701e18435cf2ddabc8acbe092d7ae105851"
+    },
+    {
+      "source": "eplan-mcp",
+      "upstreamPath": "eplan-p8-mcp-server/tests/conftest.py",
+      "path": "vendor/eplan-mcp/eplan-p8-mcp-server/tests/conftest.py",
+      "upstreamSha256": "bfe495480d681fea3ee3f8cd550ad2030b1d801e5a3e7a1ecee8878890593865",
+      "bundledSha256": "bfe495480d681fea3ee3f8cd550ad2030b1d801e5a3e7a1ecee8878890593865"
+    },
+    {
+      "source": "eplan-mcp",
+      "upstreamPath": "eplan-p8-mcp-server/tests/live-expectations/execute_script_compile.md",
+      "path": "vendor/eplan-mcp/eplan-p8-mcp-server/tests/live-expectations/execute_script_compile.md",
+      "upstreamSha256": "88e0cfb033303b16a03a74f01784f1902433ccedc844f95089a39cbdaaa7cf3b",
+      "bundledSha256": "88e0cfb033303b16a03a74f01784f1902433ccedc844f95089a39cbdaaa7cf3b"
+    },
+    {
+      "source": "eplan-mcp",
+      "upstreamPath": "eplan-p8-mcp-server/tests/live-expectations/schematic_smoke.md",
+      "path": "vendor/eplan-mcp/eplan-p8-mcp-server/tests/live-expectations/schematic_smoke.md",
+      "upstreamSha256": "7283fa23019d1432a01ec98ce7b830ef6311547929e5b903753bf1426c503859",
+      "bundledSha256": "7283fa23019d1432a01ec98ce7b830ef6311547929e5b903753bf1426c503859"
+    },
+    {
+      "source": "eplan-mcp",
+      "upstreamPath": "eplan-p8-mcp-server/tests/test_aas.py",
+      "path": "vendor/eplan-mcp/eplan-p8-mcp-server/tests/test_aas.py",
+      "upstreamSha256": "e2039b39f8fd2555384c08ae773d6df369ada1745920284861a952a4a8c9537d",
+      "bundledSha256": "e2039b39f8fd2555384c08ae773d6df369ada1745920284861a952a4a8c9537d"
+    },
+    {
+      "source": "eplan-mcp",
+      "upstreamPath": "eplan-p8-mcp-server/tests/test_app_launch_offline.py",
+      "path": "vendor/eplan-mcp/eplan-p8-mcp-server/tests/test_app_launch_offline.py",
+      "upstreamSha256": "27b3897ad68a89eb618b155d02c2da100f6432cc9d8745f14de243c1cd97f85a",
+      "bundledSha256": "27b3897ad68a89eb618b155d02c2da100f6432cc9d8745f14de243c1cd97f85a"
+    },
+    {
+      "source": "eplan-mcp",
+      "upstreamPath": "eplan-p8-mcp-server/tests/test_app_shutdown_offline.py",
+      "path": "vendor/eplan-mcp/eplan-p8-mcp-server/tests/test_app_shutdown_offline.py",
+      "upstreamSha256": "97da2576817174fcc758e267b4011c4b82decc72bb549bb59c761c6cbf299b97",
+      "bundledSha256": "97da2576817174fcc758e267b4011c4b82decc72bb549bb59c761c6cbf299b97"
+    },
+    {
+      "source": "eplan-mcp",
+      "upstreamPath": "eplan-p8-mcp-server/tests/test_backup_guard_offline.py",
+      "path": "vendor/eplan-mcp/eplan-p8-mcp-server/tests/test_backup_guard_offline.py",
+      "upstreamSha256": "4d78224da637098a2ec3bc5dee65be574de2cfcf8016c8bfbeeca6e7c63912c3",
+      "bundledSha256": "4d78224da637098a2ec3bc5dee65be574de2cfcf8016c8bfbeeca6e7c63912c3"
+    },
+    {
+      "source": "eplan-mcp",
+      "upstreamPath": "eplan-p8-mcp-server/tests/test_builder_edges.py",
+      "path": "vendor/eplan-mcp/eplan-p8-mcp-server/tests/test_builder_edges.py",
+      "upstreamSha256": "07f6f4f80b7f9fbf80df1945d831ea0a8e0a420167de0da929086de20071f8b5",
+      "bundledSha256": "07f6f4f80b7f9fbf80df1945d831ea0a8e0a420167de0da929086de20071f8b5"
+    },
+    {
+      "source": "eplan-mcp",
+      "upstreamPath": "eplan-p8-mcp-server/tests/test_call_timeout_offline.py",
+      "path": "vendor/eplan-mcp/eplan-p8-mcp-server/tests/test_call_timeout_offline.py",
+      "upstreamSha256": "539a61fb34ea8f596ebe424d6d2e373e832b20620627af8822cbae34f262f012",
+      "bundledSha256": "539a61fb34ea8f596ebe424d6d2e373e832b20620627af8822cbae34f262f012"
+    },
+    {
+      "source": "eplan-mcp",
+      "upstreamPath": "eplan-p8-mcp-server/tests/test_catalog_offline.py",
+      "path": "vendor/eplan-mcp/eplan-p8-mcp-server/tests/test_catalog_offline.py",
+      "upstreamSha256": "8a6a49c23eee52f183517326c7df3220d1b99b81034a844992a3bf8a9bbacaeb",
+      "bundledSha256": "8a6a49c23eee52f183517326c7df3220d1b99b81034a844992a3bf8a9bbacaeb"
+    },
+    {
+      "source": "eplan-mcp",
+      "upstreamPath": "eplan-p8-mcp-server/tests/test_connection_edges.py",
+      "path": "vendor/eplan-mcp/eplan-p8-mcp-server/tests/test_connection_edges.py",
+      "upstreamSha256": "53aff4cc558cc503bb69d65f64869efb56278708a290892ae77ba621d6cfb316",
+      "bundledSha256": "53aff4cc558cc503bb69d65f64869efb56278708a290892ae77ba621d6cfb316"
+    },
+    {
+      "source": "eplan-mcp",
+      "upstreamPath": "eplan-p8-mcp-server/tests/test_connections_offline.py",
+      "path": "vendor/eplan-mcp/eplan-p8-mcp-server/tests/test_connections_offline.py",
+      "upstreamSha256": "79718ca4afafeed15f9519e1c214d71c8d5684317ecd3edc2bc6406e94985dd7",
+      "bundledSha256": "79718ca4afafeed15f9519e1c214d71c8d5684317ecd3edc2bc6406e94985dd7"
+    },
+    {
+      "source": "eplan-mcp",
+      "upstreamPath": "eplan-p8-mcp-server/tests/test_context_exception_offline.py",
+      "path": "vendor/eplan-mcp/eplan-p8-mcp-server/tests/test_context_exception_offline.py",
+      "upstreamSha256": "ea713823bc3b7334c1e398f0604f3ce3eb7ef3ad76e7875fa4a26d89f795f71f",
+      "bundledSha256": "ea713823bc3b7334c1e398f0604f3ce3eb7ef3ad76e7875fa4a26d89f795f71f"
+    },
+    {
+      "source": "eplan-mcp",
+      "upstreamPath": "eplan-p8-mcp-server/tests/test_coverage_counts_offline.py",
+      "path": "vendor/eplan-mcp/eplan-p8-mcp-server/tests/test_coverage_counts_offline.py",
+      "upstreamSha256": "09f45454e7cdbf15f111156aefaa1c326ef2fb7ec527936f00985fd76e47581e",
+      "bundledSha256": "09f45454e7cdbf15f111156aefaa1c326ef2fb7ec527936f00985fd76e47581e"
+    },
+    {
+      "source": "eplan-mcp",
+      "upstreamPath": "eplan-p8-mcp-server/tests/test_cs_escaping.py",
+      "path": "vendor/eplan-mcp/eplan-p8-mcp-server/tests/test_cs_escaping.py",
+      "upstreamSha256": "8744905f6589ae7d0f9ca6abb08ec3643be5431079fc47d56b8c4e6aee7c00fc",
+      "bundledSha256": "8744905f6589ae7d0f9ca6abb08ec3643be5431079fc47d56b8c4e6aee7c00fc"
+    },
+    {
+      "source": "eplan-mcp",
+      "upstreamPath": "eplan-p8-mcp-server/tests/test_cs_json.py",
+      "path": "vendor/eplan-mcp/eplan-p8-mcp-server/tests/test_cs_json.py",
+      "upstreamSha256": "a8804caa509b6e2ca3bae781cda3f1fa42c4856bf41340e3b394f462d98079b8",
+      "bundledSha256": "a8804caa509b6e2ca3bae781cda3f1fa42c4856bf41340e3b394f462d98079b8"
+    },
+    {
+      "source": "eplan-mcp",
+      "upstreamPath": "eplan-p8-mcp-server/tests/test_discovery_mode_offline.py",
+      "path": "vendor/eplan-mcp/eplan-p8-mcp-server/tests/test_discovery_mode_offline.py",
+      "upstreamSha256": "ae99503eab7952c0204aebe354b6092b3488a48766c7752d5518b131446109fd",
+      "bundledSha256": "ae99503eab7952c0204aebe354b6092b3488a48766c7752d5518b131446109fd"
+    },
+    {
+      "source": "eplan-mcp",
+      "upstreamPath": "eplan-p8-mcp-server/tests/test_docstring_truth_offline.py",
+      "path": "vendor/eplan-mcp/eplan-p8-mcp-server/tests/test_docstring_truth_offline.py",
+      "upstreamSha256": "bab095d805ac733b423868c7f20cefc74baaaf8c2a8b78631888d501a26c26c6",
+      "bundledSha256": "bab095d805ac733b423868c7f20cefc74baaaf8c2a8b78631888d501a26c26c6"
+    },
+    {
+      "source": "eplan-mcp",
+      "upstreamPath": "eplan-p8-mcp-server/tests/test_e3d_and_shaping_offline.py",
+      "path": "vendor/eplan-mcp/eplan-p8-mcp-server/tests/test_e3d_and_shaping_offline.py",
+      "upstreamSha256": "c4b816860422c91d86aff152280a51f1a676419393c01d425a9a05f97b6e3545",
+      "bundledSha256": "c4b816860422c91d86aff152280a51f1a676419393c01d425a9a05f97b6e3545"
+    },
+    {
+      "source": "eplan-mcp",
+      "upstreamPath": "eplan-p8-mcp-server/tests/test_eplan_test_offline.py",
+      "path": "vendor/eplan-mcp/eplan-p8-mcp-server/tests/test_eplan_test_offline.py",
+      "upstreamSha256": "30d1e6b4cc1e79c00d745d9b455809d9cbe31fd7f224914153ccbe821ac18eaa",
+      "bundledSha256": "30d1e6b4cc1e79c00d745d9b455809d9cbe31fd7f224914153ccbe821ac18eaa"
+    },
+    {
+      "source": "eplan-mcp",
+      "upstreamPath": "eplan-p8-mcp-server/tests/test_execute_script_compile_offline.py",
+      "path": "vendor/eplan-mcp/eplan-p8-mcp-server/tests/test_execute_script_compile_offline.py",
+      "upstreamSha256": "f4efe06a7b9ca78188928cd90d69983992496fd589abb6d185590b721f2c51d4",
+      "bundledSha256": "f4efe06a7b9ca78188928cd90d69983992496fd589abb6d185590b721f2c51d4"
+    },
+    {
+      "source": "eplan-mcp",
+      "upstreamPath": "eplan-p8-mcp-server/tests/test_execute_script_live.py",
+      "path": "vendor/eplan-mcp/eplan-p8-mcp-server/tests/test_execute_script_live.py",
+      "upstreamSha256": "6327ab9191c6e9f08ca508b49cd0a8a080e7fa0b40e1e724d7d41e6ac333160b",
+      "bundledSha256": "6327ab9191c6e9f08ca508b49cd0a8a080e7fa0b40e1e724d7d41e6ac333160b"
+    },
+    {
+      "source": "eplan-mcp",
+      "upstreamPath": "eplan-p8-mcp-server/tests/test_export_written_files_offline.py",
+      "path": "vendor/eplan-mcp/eplan-p8-mcp-server/tests/test_export_written_files_offline.py",
+      "upstreamSha256": "bfd5b09ef6e1726cc736b9d91f403c19a01756f117a7f8072f7545eb7e845a1f",
+      "bundledSha256": "bfd5b09ef6e1726cc736b9d91f403c19a01756f117a7f8072f7545eb7e845a1f"
+    },
+    {
+      "source": "eplan-mcp",
+      "upstreamPath": "eplan-p8-mcp-server/tests/test_extensions_offline.py",
+      "path": "vendor/eplan-mcp/eplan-p8-mcp-server/tests/test_extensions_offline.py",
+      "upstreamSha256": "7d91b6997c35da9f463dd869e439241f30626696986c54344d9719ad71ff041d",
+      "bundledSha256": "7d91b6997c35da9f463dd869e439241f30626696986c54344d9719ad71ff041d"
+    },
+    {
+      "source": "eplan-mcp",
+      "upstreamPath": "eplan-p8-mcp-server/tests/test_fixtures_offline.py",
+      "path": "vendor/eplan-mcp/eplan-p8-mcp-server/tests/test_fixtures_offline.py",
+      "upstreamSha256": "89dbfe1fb0eba8fbfa9e5e73f2ad169391832b5baffc189451e2ff6e494e602d",
+      "bundledSha256": "89dbfe1fb0eba8fbfa9e5e73f2ad169391832b5baffc189451e2ff6e494e602d"
+    },
+    {
+      "source": "eplan-mcp",
+      "upstreamPath": "eplan-p8-mcp-server/tests/test_import_export_edges.py",
+      "path": "vendor/eplan-mcp/eplan-p8-mcp-server/tests/test_import_export_edges.py",
+      "upstreamSha256": "e638c6548b346eb3856302e1f604aacd9197f48d0a6979fab11074e253638000",
+      "bundledSha256": "e638c6548b346eb3856302e1f604aacd9197f48d0a6979fab11074e253638000"
+    },
+    {
+      "source": "eplan-mcp",
+      "upstreamPath": "eplan-p8-mcp-server/tests/test_introspect_offline.py",
+      "path": "vendor/eplan-mcp/eplan-p8-mcp-server/tests/test_introspect_offline.py",
+      "upstreamSha256": "77b99f63ff08c72f5b835d5d15f17f16edd2e4cf3b6b7a53b5ab611a36ec4862",
+      "bundledSha256": "77b99f63ff08c72f5b835d5d15f17f16edd2e4cf3b6b7a53b5ab611a36ec4862"
+    },
+    {
+      "source": "eplan-mcp",
+      "upstreamPath": "eplan-p8-mcp-server/tests/test_live_offline.py",
+      "path": "vendor/eplan-mcp/eplan-p8-mcp-server/tests/test_live_offline.py",
+      "upstreamSha256": "f2d0dd4b377cd422be35d998e3629847e2b73c12d2e39e3e195c7df6c55679c3",
+      "bundledSha256": "f2d0dd4b377cd422be35d998e3629847e2b73c12d2e39e3e195c7df6c55679c3"
+    },
+    {
+      "source": "eplan-mcp",
+      "upstreamPath": "eplan-p8-mcp-server/tests/test_llm_md_counts_offline.py",
+      "path": "vendor/eplan-mcp/eplan-p8-mcp-server/tests/test_llm_md_counts_offline.py",
+      "upstreamSha256": "0c93522a89e99b0eb8f5384ebb503b18ae4de568502571632c5ffde535f2316b",
+      "bundledSha256": "0c93522a89e99b0eb8f5384ebb503b18ae4de568502571632c5ffde535f2316b"
+    },
+    {
+      "source": "eplan-mcp",
+      "upstreamPath": "eplan-p8-mcp-server/tests/test_log_action_offline.py",
+      "path": "vendor/eplan-mcp/eplan-p8-mcp-server/tests/test_log_action_offline.py",
+      "upstreamSha256": "f80265ac10cd40d7a5401b617fa505c46ac2844bd9bf6adf2f885ba468dc1d1c",
+      "bundledSha256": "f80265ac10cd40d7a5401b617fa505c46ac2844bd9bf6adf2f885ba468dc1d1c"
+    },
+    {
+      "source": "eplan-mcp",
+      "upstreamPath": "eplan-p8-mcp-server/tests/test_message_shaping_offline.py",
+      "path": "vendor/eplan-mcp/eplan-p8-mcp-server/tests/test_message_shaping_offline.py",
+      "upstreamSha256": "fd2db2feba007ec7882fb0166fa60764c950774e3a2275bc5ffa7fc762166f4e",
+      "bundledSha256": "fd2db2feba007ec7882fb0166fa60764c950774e3a2275bc5ffa7fc762166f4e"
+    },
+    {
+      "source": "eplan-mcp",
+      "upstreamPath": "eplan-p8-mcp-server/tests/test_new_actions_offline.py",
+      "path": "vendor/eplan-mcp/eplan-p8-mcp-server/tests/test_new_actions_offline.py",
+      "upstreamSha256": "a1ac10967590615898e269006f021917e09bf35f96c474fae267008acf6786f5",
+      "bundledSha256": "a1ac10967590615898e269006f021917e09bf35f96c474fae267008acf6786f5"
+    },
+    {
+      "source": "eplan-mcp",
+      "upstreamPath": "eplan-p8-mcp-server/tests/test_parts_db_offline.py",
+      "path": "vendor/eplan-mcp/eplan-p8-mcp-server/tests/test_parts_db_offline.py",
+      "upstreamSha256": "893a4c0cb028d8a8a33245e3563b8db204f06be0bf936064a7b497fd9ce12d77",
+      "bundledSha256": "893a4c0cb028d8a8a33245e3563b8db204f06be0bf936064a7b497fd9ce12d77"
+    },
+    {
+      "source": "eplan-mcp",
+      "upstreamPath": "eplan-p8-mcp-server/tests/test_place_connected_offline.py",
+      "path": "vendor/eplan-mcp/eplan-p8-mcp-server/tests/test_place_connected_offline.py",
+      "upstreamSha256": "04d80999cc1bf8df889f7a8d44536d13d4a598da8983f2918f2740a7ef76e4aa",
+      "bundledSha256": "04d80999cc1bf8df889f7a8d44536d13d4a598da8983f2918f2740a7ef76e4aa"
+    },
+    {
+      "source": "eplan-mcp",
+      "upstreamPath": "eplan-p8-mcp-server/tests/test_place_routing_offline.py",
+      "path": "vendor/eplan-mcp/eplan-p8-mcp-server/tests/test_place_routing_offline.py",
+      "upstreamSha256": "a7244ba353a23569c2a294a4f2fab7b8107941d24350a1048bc5994769479f0b",
+      "bundledSha256": "a7244ba353a23569c2a294a4f2fab7b8107941d24350a1048bc5994769479f0b"
+    },
+    {
+      "source": "eplan-mcp",
+      "upstreamPath": "eplan-p8-mcp-server/tests/test_process_control_offline.py",
+      "path": "vendor/eplan-mcp/eplan-p8-mcp-server/tests/test_process_control_offline.py",
+      "upstreamSha256": "62b6dca2be885d551156b70a3e7d0e3848a978921848c6dee77f6bc2b03fcd76",
+      "bundledSha256": "62b6dca2be885d551156b70a3e7d0e3848a978921848c6dee77f6bc2b03fcd76"
+    },
+    {
+      "source": "eplan-mcp",
+      "upstreamPath": "eplan-p8-mcp-server/tests/test_read_page_types_offline.py",
+      "path": "vendor/eplan-mcp/eplan-p8-mcp-server/tests/test_read_page_types_offline.py",
+      "upstreamSha256": "933583255632f9afd0a63f408d74d39ef3ae37db6e2c5f3c21d11118ee36aa8d",
+      "bundledSha256": "933583255632f9afd0a63f408d74d39ef3ae37db6e2c5f3c21d11118ee36aa8d"
+    },
+    {
+      "source": "eplan-mcp",
+      "upstreamPath": "eplan-p8-mcp-server/tests/test_register_script_offline.py",
+      "path": "vendor/eplan-mcp/eplan-p8-mcp-server/tests/test_register_script_offline.py",
+      "upstreamSha256": "13f8133d5079a208c297346f0feeb5143c59f8cdb5320a20cb729fd4c1545b26",
+      "bundledSha256": "13f8133d5079a208c297346f0feeb5143c59f8cdb5320a20cb729fd4c1545b26"
+    },
+    {
+      "source": "eplan-mcp",
+      "upstreamPath": "eplan-p8-mcp-server/tests/test_routed_offline.py",
+      "path": "vendor/eplan-mcp/eplan-p8-mcp-server/tests/test_routed_offline.py",
+      "upstreamSha256": "a16a743edff95a4fff79de33b097d0e16da71d439138a24e01eb47f62d8837c7",
+      "bundledSha256": "a16a743edff95a4fff79de33b097d0e16da71d439138a24e01eb47f62d8837c7"
+    },
+    {
+      "source": "eplan-mcp",
+      "upstreamPath": "eplan-p8-mcp-server/tests/test_routing_catalog_offline.py",
+      "path": "vendor/eplan-mcp/eplan-p8-mcp-server/tests/test_routing_catalog_offline.py",
+      "upstreamSha256": "a4bb4944750a01b2cb0d59d483707ff61b1539d3c95a7bf6c7e541eb5978e253",
+      "bundledSha256": "a4bb4944750a01b2cb0d59d483707ff61b1539d3c95a7bf6c7e541eb5978e253"
+    },
+    {
+      "source": "eplan-mcp",
+      "upstreamPath": "eplan-p8-mcp-server/tests/test_schematic_model_offline.py",
+      "path": "vendor/eplan-mcp/eplan-p8-mcp-server/tests/test_schematic_model_offline.py",
+      "upstreamSha256": "731e91e082b1633e69c2ee722ddc29adda4355f9b01937ba2ff99427e7577060",
+      "bundledSha256": "731e91e082b1633e69c2ee722ddc29adda4355f9b01937ba2ff99427e7577060"
+    },
+    {
+      "source": "eplan-mcp",
+      "upstreamPath": "eplan-p8-mcp-server/tests/test_schematic_offline.py",
+      "path": "vendor/eplan-mcp/eplan-p8-mcp-server/tests/test_schematic_offline.py",
+      "upstreamSha256": "ee6539cd2410e5bae2b7691c01fa052bacf4d9cf7047fa1b40e6d7699ff0528a",
+      "bundledSha256": "ee6539cd2410e5bae2b7691c01fa052bacf4d9cf7047fa1b40e6d7699ff0528a"
+    },
+    {
+      "source": "eplan-mcp",
+      "upstreamPath": "eplan-p8-mcp-server/tests/test_script_failure_offline.py",
+      "path": "vendor/eplan-mcp/eplan-p8-mcp-server/tests/test_script_failure_offline.py",
+      "upstreamSha256": "aee83f82eb0d549693af4f9d9eca34c86a2751b9519be4b04389cb16162f05c0",
+      "bundledSha256": "aee83f82eb0d549693af4f9d9eca34c86a2751b9519be4b04389cb16162f05c0"
+    },
+    {
+      "source": "eplan-mcp",
+      "upstreamPath": "eplan-p8-mcp-server/tests/test_scripted_offline.py",
+      "path": "vendor/eplan-mcp/eplan-p8-mcp-server/tests/test_scripted_offline.py",
+      "upstreamSha256": "81a7957c0b6af944c65bb0e2a3c93e2acb0709d1aed48e2ca79ebde45698be7c",
+      "bundledSha256": "81a7957c0b6af944c65bb0e2a3c93e2acb0709d1aed48e2ca79ebde45698be7c"
+    },
+    {
+      "source": "eplan-mcp",
+      "upstreamPath": "eplan-p8-mcp-server/tests/test_security_guards_offline.py",
+      "path": "vendor/eplan-mcp/eplan-p8-mcp-server/tests/test_security_guards_offline.py",
+      "upstreamSha256": "021792c6e6fdd914fa7436e0f28ff48fca8e31ef9426ced2d5391d4635da913b",
+      "bundledSha256": "021792c6e6fdd914fa7436e0f28ff48fca8e31ef9426ced2d5391d4635da913b"
+    },
+    {
+      "source": "eplan-mcp",
+      "upstreamPath": "eplan-p8-mcp-server/tests/test_tool_registry_offline.py",
+      "path": "vendor/eplan-mcp/eplan-p8-mcp-server/tests/test_tool_registry_offline.py",
+      "upstreamSha256": "48c071a6a40f32e2bd5de8ad06cd2bc257d0f62635081897e9701c85f72f7e52",
+      "bundledSha256": "48c071a6a40f32e2bd5de8ad06cd2bc257d0f62635081897e9701c85f72f7e52"
+    },
+    {
+      "source": "eplan-mcp",
+      "upstreamPath": "eplan-p8-mcp-server/tests/test_validate_actions_offline.py",
+      "path": "vendor/eplan-mcp/eplan-p8-mcp-server/tests/test_validate_actions_offline.py",
+      "upstreamSha256": "ab8de62d847b8c6c939c601be26e01c783d2f36b8bc6a08cf0c11c67ee926551",
+      "bundledSha256": "ab8de62d847b8c6c939c601be26e01c783d2f36b8bc6a08cf0c11c67ee926551"
+    },
+    {
+      "source": "eplan-mcp",
+      "upstreamPath": "eplan-p8-mcp-server/tests/test_verify_and_tag_offline.py",
+      "path": "vendor/eplan-mcp/eplan-p8-mcp-server/tests/test_verify_and_tag_offline.py",
+      "upstreamSha256": "543e67ee4d92f230617537c7c0aaf22747b35f66456580cb1b23a98cdb9e253b",
+      "bundledSha256": "543e67ee4d92f230617537c7c0aaf22747b35f66456580cb1b23a98cdb9e253b"
+    },
+    {
+      "source": "eplan-mcp",
+      "upstreamPath": "eplan-p8-mcp-server/TOKEN_COST.md",
+      "path": "vendor/eplan-mcp/eplan-p8-mcp-server/TOKEN_COST.md",
+      "upstreamSha256": "9a34d53b3c9f5866d44ed98afbb142ad526e15d929d09f2a7420f6b8327251dc",
+      "bundledSha256": "9a34d53b3c9f5866d44ed98afbb142ad526e15d929d09f2a7420f6b8327251dc"
+    },
+    {
+      "source": "eplan-mcp",
+      "upstreamPath": "eplan-p8-mcp-server/tools/action_validation_report.md",
+      "path": "vendor/eplan-mcp/eplan-p8-mcp-server/tools/action_validation_report.md",
+      "upstreamSha256": "e0b3018b7499817ba8bffb84a7b98f7a467d385f84204e29a29c43c07e19bfcd",
+      "bundledSha256": "e0b3018b7499817ba8bffb84a7b98f7a467d385f84204e29a29c43c07e19bfcd"
+    },
+    {
+      "source": "eplan-mcp",
+      "upstreamPath": "eplan-p8-mcp-server/tools/build_action_registry.py",
+      "path": "vendor/eplan-mcp/eplan-p8-mcp-server/tools/build_action_registry.py",
+      "upstreamSha256": "c731aa22b0293fb8785f1fa14497e915f649f3050b3b0d408335af03c0d69628",
+      "bundledSha256": "c731aa22b0293fb8785f1fa14497e915f649f3050b3b0d408335af03c0d69628"
+    },
+    {
+      "source": "eplan-mcp",
+      "upstreamPath": "eplan-p8-mcp-server/tools/capture_ribbon_labels.py",
+      "path": "vendor/eplan-mcp/eplan-p8-mcp-server/tools/capture_ribbon_labels.py",
+      "upstreamSha256": "100202da67b260ed3f615534ca2bb4ee35aa33532a91351b3c50d91e4fcec1f0",
+      "bundledSha256": "100202da67b260ed3f615534ca2bb4ee35aa33532a91351b3c50d91e4fcec1f0"
+    },
+    {
+      "source": "eplan-mcp",
+      "upstreamPath": "eplan-p8-mcp-server/tools/data/ged_interaction_names.json",
+      "path": "vendor/eplan-mcp/eplan-p8-mcp-server/tools/data/ged_interaction_names.json",
+      "upstreamSha256": "d81247cd0cdd1ced102371504a325076c64f70579fa31c9a4eb3defc57b4db19",
+      "bundledSha256": "d81247cd0cdd1ced102371504a325076c64f70579fa31c9a4eb3defc57b4db19"
+    },
+    {
+      "source": "eplan-mcp",
+      "upstreamPath": "eplan-p8-mcp-server/tools/data/live_actions_2027.json",
+      "path": "vendor/eplan-mcp/eplan-p8-mcp-server/tools/data/live_actions_2027.json",
+      "upstreamSha256": "e77332b05d0ad527e9ff7d4ac82e7b8a942ab72f0cdcb8dbaa5f468c04504921",
+      "bundledSha256": "e77332b05d0ad527e9ff7d4ac82e7b8a942ab72f0cdcb8dbaa5f468c04504921"
+    },
+    {
+      "source": "eplan-mcp",
+      "upstreamPath": "eplan-p8-mcp-server/tools/data/official_actions_2027.json",
+      "path": "vendor/eplan-mcp/eplan-p8-mcp-server/tools/data/official_actions_2027.json",
+      "upstreamSha256": "4645d61d9cdf1438bcfda5073ead2a51a66cc123d21b60d33c90d430aaa31aa6",
+      "bundledSha256": "4645d61d9cdf1438bcfda5073ead2a51a66cc123d21b60d33c90d430aaa31aa6"
+    },
+    {
+      "source": "eplan-mcp",
+      "upstreamPath": "eplan-p8-mcp-server/tools/data/ribbon_labels_2027.json",
+      "path": "vendor/eplan-mcp/eplan-p8-mcp-server/tools/data/ribbon_labels_2027.json",
+      "upstreamSha256": "b1c171c1ca39182f3c15890718dccab7a7dab98288d880a348080b77287fc9b4",
+      "bundledSha256": "b1c171c1ca39182f3c15890718dccab7a7dab98288d880a348080b77287fc9b4"
+    },
+    {
+      "source": "eplan-mcp",
+      "upstreamPath": "eplan-p8-mcp-server/tools/generate_wiki_pages.py",
+      "path": "vendor/eplan-mcp/eplan-p8-mcp-server/tools/generate_wiki_pages.py",
+      "upstreamSha256": "f307032db90fd7f4189e1bdfcb5dbea0f95d569a23568f187d6c76886b027307",
+      "bundledSha256": "f307032db90fd7f4189e1bdfcb5dbea0f95d569a23568f187d6c76886b027307"
+    },
+    {
+      "source": "eplan-mcp",
+      "upstreamPath": "eplan-p8-mcp-server/tools/probe_live_actions.py",
+      "path": "vendor/eplan-mcp/eplan-p8-mcp-server/tools/probe_live_actions.py",
+      "upstreamSha256": "09177233dd78b6ecf1cf772b7134d0c90348b635e4eba9c8a12742df3db4ac1f",
+      "bundledSha256": "09177233dd78b6ecf1cf772b7134d0c90348b635e4eba9c8a12742df3db4ac1f"
+    },
+    {
+      "source": "eplan-mcp",
+      "upstreamPath": "eplan-p8-mcp-server/tools/validate_actions.py",
+      "path": "vendor/eplan-mcp/eplan-p8-mcp-server/tools/validate_actions.py",
+      "upstreamSha256": "048eba66a651de1e49214527c3a0ce2d97cc7289bb72cfd6f9f9c5f356ee5ee9",
+      "bundledSha256": "048eba66a651de1e49214527c3a0ce2d97cc7289bb72cfd6f9f9c5f356ee5ee9"
+    },
+    {
+      "source": "eplan-mcp",
+      "upstreamPath": "LICENSE",
+      "path": "vendor/eplan-mcp/LICENSE",
+      "upstreamSha256": "751999a977cd42807cc1178a46154344f186bc48c97ded588b049452d77e0911",
+      "bundledSha256": "751999a977cd42807cc1178a46154344f186bc48c97ded588b049452d77e0911"
+    },
+    {
+      "source": "eplan-mcp",
+      "upstreamPath": "llm.md",
+      "path": "vendor/eplan-mcp/llm.md",
+      "upstreamSha256": "792c635ead30797f6030e6cd1eda2e337b118a2ba3575886925eb569fb67ef42",
+      "bundledSha256": "792c635ead30797f6030e6cd1eda2e337b118a2ba3575886925eb569fb67ef42"
+    },
+    {
+      "source": "eplan-scripting-skill",
+      "upstreamPath": "skills/eplan-p8/eplan-scripting/references/actions-reference.md",
+      "path": "skills/eplan-scripting/references/actions-reference.md",
+      "upstreamSha256": "9b4eac190f8c7013c3b635484389cfdbb91cf9a62a1eb76e7634c6e042d5b1c5",
+      "bundledSha256": "9b4eac190f8c7013c3b635484389cfdbb91cf9a62a1eb76e7634c6e042d5b1c5"
+    },
+    {
+      "source": "eplan-scripting-skill",
+      "upstreamPath": "skills/eplan-p8/eplan-scripting/references/api-data-access.md",
+      "path": "skills/eplan-scripting/references/api-data-access.md",
+      "upstreamSha256": "3b022792c05cf2ed7f0cab034e5ca74940343804af5855cd2b40090e60775cc9",
+      "bundledSha256": "f5dec4fec1a33be14fe88b57a3824bc4dde3f8e617c2cdc5d5c3cbda523097fa"
+    },
+    {
+      "source": "eplan-scripting-skill",
+      "upstreamPath": "skills/eplan-p8/eplan-scripting/references/core-classes.md",
+      "path": "skills/eplan-scripting/references/core-classes.md",
+      "upstreamSha256": "cbb5293c777137fa3251a8c711913e2e9bd55b2d2b706e44fc54e074ad882817",
+      "bundledSha256": "cbb5293c777137fa3251a8c711913e2e9bd55b2d2b706e44fc54e074ad882817"
+    },
+    {
+      "source": "eplan-scripting-skill",
+      "upstreamPath": "skills/eplan-p8/eplan-scripting/references/e3d-installation-spaces.md",
+      "path": "skills/eplan-scripting/references/e3d-installation-spaces.md",
+      "upstreamSha256": "dc5f05ef275b54322d1bdffbb5df89a94c27fca2e5c90488cd114cf791f60503",
+      "bundledSha256": "dc5f05ef275b54322d1bdffbb5df89a94c27fca2e5c90488cd114cf791f60503"
+    },
+    {
+      "source": "eplan-scripting-skill",
+      "upstreamPath": "skills/eplan-p8/eplan-scripting/references/eec-typicals.md",
+      "path": "skills/eplan-scripting/references/eec-typicals.md",
+      "upstreamSha256": "c6e22609a8db082a086deb1d84080e35569aa3d28c3fa7175bfd4b07caeb7f12",
+      "bundledSha256": "c6e22609a8db082a086deb1d84080e35569aa3d28c3fa7175bfd4b07caeb7f12"
+    },
+    {
+      "source": "eplan-scripting-skill",
+      "upstreamPath": "skills/eplan-p8/eplan-scripting/references/integration-patterns.md",
+      "path": "skills/eplan-scripting/references/integration-patterns.md",
+      "upstreamSha256": "a94601658c72cc5b9d5c8717838c356edbe7d62d86dac0959c00be96037139ba",
+      "bundledSha256": "a94601658c72cc5b9d5c8717838c356edbe7d62d86dac0959c00be96037139ba"
+    },
+    {
+      "source": "eplan-scripting-skill",
+      "upstreamPath": "skills/eplan-p8/eplan-scripting/references/pitfalls.md",
+      "path": "skills/eplan-scripting/references/pitfalls.md",
+      "upstreamSha256": "3066280edb6912bb0ec9dbcd58a353b7c901527909ad0049246e8b50fef393fb",
+      "bundledSha256": "3066280edb6912bb0ec9dbcd58a353b7c901527909ad0049246e8b50fef393fb"
+    },
+    {
+      "source": "eplan-scripting-skill",
+      "upstreamPath": "skills/eplan-p8/eplan-scripting/references/remoting.md",
+      "path": "skills/eplan-scripting/references/remoting.md",
+      "upstreamSha256": "7e76ad47b37977ce3fb29c9e77f13ef5c772ff1fa9d06a7ab7535b8324336701",
+      "bundledSha256": "7e76ad47b37977ce3fb29c9e77f13ef5c772ff1fa9d06a7ab7535b8324336701"
+    },
+    {
+      "source": "eplan-scripting-skill",
+      "upstreamPath": "skills/eplan-p8/eplan-scripting/references/script-basics.md",
+      "path": "skills/eplan-scripting/references/script-basics.md",
+      "upstreamSha256": "3ee03f74104d82f9c5fbaa1cc668a51510fd0e4b8c391d21dfe322fdf9e3d25d",
+      "bundledSha256": "548d2f4a7387caf0aeec84d24eefd6bf586f505d9545366a8085bd07b41a8bff"
+    },
+    {
+      "source": "eplan-scripting-skill",
+      "upstreamPath": "skills/eplan-p8/eplan-scripting/SKILL.md",
+      "path": "skills/eplan-scripting/SKILL.md",
+      "upstreamSha256": "e8bc0f9d92f198c7f1da89eaf916b8700ce496a60877411e1433e13e675ca7f0",
+      "bundledSha256": "076961e766a9d477858110dccb6fd7f43ca7f575b728b285e1b33be8ab1ed9c4"
+    },
+    {
+      "source": "eec-pro-skill",
+      "upstreamPath": "skills/eec-pro-development/references/doc-categories.md",
+      "path": "skills/eec-pro-development/references/doc-categories.md",
+      "upstreamSha256": "b8ee4c3d6545eff305647c561d00c9bf72775148cd9f2d180a4700a1d863c4f1",
+      "bundledSha256": "b8ee4c3d6545eff305647c561d00c9bf72775148cd9f2d180a4700a1d863c4f1"
+    },
+    {
+      "source": "eec-pro-skill",
+      "upstreamPath": "skills/eec-pro-development/references/eox-format.md",
+      "path": "skills/eec-pro-development/references/eox-format.md",
+      "upstreamSha256": "8c25f9bdc94e43a3c61e9636b7c1122174b46ad59ffd353d9a75bc7616902d3b",
+      "bundledSha256": "8c25f9bdc94e43a3c61e9636b7c1122174b46ad59ffd353d9a75bc7616902d3b"
+    },
+    {
+      "source": "eec-pro-skill",
+      "upstreamPath": "skills/eec-pro-development/references/groovy-actions.md",
+      "path": "skills/eec-pro-development/references/groovy-actions.md",
+      "upstreamSha256": "71820fbd44ae797360924644f9d843a34451bd9ab9b4c6c5d97e455e298b85c9",
+      "bundledSha256": "71820fbd44ae797360924644f9d843a34451bd9ab9b4c6c5d97e455e298b85c9"
+    },
+    {
+      "source": "eec-pro-skill",
+      "upstreamPath": "skills/eec-pro-development/references/job-server.md",
+      "path": "skills/eec-pro-development/references/job-server.md",
+      "upstreamSha256": "60f09d8f3fbc35f0525701989093b3663d4ec266f187b5e17eebd8fa162ea0d0",
+      "bundledSha256": "60f09d8f3fbc35f0525701989093b3663d4ec266f187b5e17eebd8fa162ea0d0"
+    },
+    {
+      "source": "eec-pro-skill",
+      "upstreamPath": "skills/eec-pro-development/SKILL.md",
+      "path": "skills/eec-pro-development/SKILL.md",
+      "upstreamSha256": "afb1a80ddb9ee4efd78da3015bf0474db542ece3d84b081829cf0ae2ce73baa4",
+      "bundledSha256": "51ff9fe7fba70d4581af55f2158afe2fe4ab726d3aafda366a749bf4889117e8"
+    },
+    {
+      "source": "eplan-scripting-skill",
+      "upstreamPath": "router/SKILL.md",
+      "path": "skills/eplan-router/SKILL.md",
+      "upstreamSha256": "9f211656d484fd88dd508219fed7136c46f677480b5bb3f44fab178386bfccbb",
+      "bundledSha256": "0771784f6a09ea07df8c46873c88873220e4b255c2d22412eab29698ac850162"
+    },
+    {
+      "source": "eplan-mcp",
+      "upstreamPath": "LICENSE",
+      "path": "licenses/eplan-mcp-MIT.txt",
+      "upstreamSha256": "751999a977cd42807cc1178a46154344f186bc48c97ded588b049452d77e0911",
+      "bundledSha256": "751999a977cd42807cc1178a46154344f186bc48c97ded588b049452d77e0911"
+    },
+    {
+      "source": "eplan-scripting-skill",
+      "upstreamPath": "LICENSE",
+      "path": "licenses/eplan-scripting-skill-MIT.txt",
+      "upstreamSha256": "751999a977cd42807cc1178a46154344f186bc48c97ded588b049452d77e0911",
+      "bundledSha256": "751999a977cd42807cc1178a46154344f186bc48c97ded588b049452d77e0911"
+    },
+    {
+      "source": "eec-pro-skill",
+      "upstreamPath": "LICENSE",
+      "path": "licenses/eec-pro-skill-MIT.txt",
+      "upstreamSha256": "751999a977cd42807cc1178a46154344f186bc48c97ded588b049452d77e0911",
+      "bundledSha256": "751999a977cd42807cc1178a46154344f186bc48c97ded588b049452d77e0911"
+    },
+    {
+      "source": "eplan-cloudflare-rags",
+      "upstreamPath": "LICENSE",
+      "path": "licenses/eplan-cloudflare-rags-MIT.txt",
+      "upstreamSha256": "751999a977cd42807cc1178a46154344f186bc48c97ded588b049452d77e0911",
+      "bundledSha256": "751999a977cd42807cc1178a46154344f186bc48c97ded588b049452d77e0911"
+    }
+  ]
+}

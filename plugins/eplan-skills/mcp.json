@@ -1,0 +1,24 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/mcp.schema.json",
+  "mcpServers": {
+    "eplan": {
+      "type": "stdio",
+      "command": "python",
+      "args": [
+        "${PLUGIN_ROOT}/scripts/run_mcp.py"
+      ]
+    },
+    "eplan-rag": {
+      "type": "streamable-http",
+      "url": "https://rag2026.covaga.xyz/mcp"
+    },
+    "eplan-wiki-2027": {
+      "type": "streamable-http",
+      "url": "https://rag2027.covaga.xyz/mcp"
+    },
+    "eecpro-rag": {
+      "type": "streamable-http",
+      "url": "https://rageecpro.covaga.xyz/mcp"
+    }
+  }
+}

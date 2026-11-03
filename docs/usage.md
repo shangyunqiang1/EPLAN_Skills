@@ -1,0 +1,50 @@
+# 使用说明
+
+## 前提与连接
+
+在运行 EPLAN 的 Windows 电脑上安装 Python 和插件依赖，使用已获授权的 EPLAN 功能。参照 [README](../README.md) 执行安装脚本后，启动 EPLAN，并在 **文件 → 设置 → 工作站 → 接口 → 远程访问** 启用 Remote Client 远程访问。设置位置、授权和支持的版本以实际安装为准。
+
+新建客户端会话后，可以请求助手按顺序执行：
+
+1. 调用本地 `eplan` MCP 的 `eplan_versions`，检查检测到的安装版本。
+2. 根据需要调用 `eplan_connect`，再用 `eplan_status` 检查连接。如果自动发现失败，检查实际监听端口并明确指定；不要仅凭默认端口判断。
+3. 确认操作目标，先在测试项目上尝试读取、导出或编辑，再检查 EPLAN 中的实际结果。
+
+本地 MCP 可以执行脚本和更改项目；在用户授权范围内操作，保留现有工程并核验结果。此插件的集成与离线测试不能代替目标机器上的 EPLAN 连接和工程验证。
+
+## 配置
+
+在运行依赖安装脚本和启动客户端之前设置环境变量，并在更改后重启客户端：
+
+| 变量 | 作用 |
+|---|---|
+| `EPLAN_SKILLS_DATA_DIR` | 指定插件可写数据目录；默认 `%LOCALAPPDATA%\EPLAN_Skills`，包含 Python 环境及日志。安装与运行时须使用相同目录。 |
+| `EPLAN_PLATFORM_ROOT` | EPLAN 平台安装根目录，适用于非默认安装位置。 |
+| `EPLAN_MCP_MODE` | 默认 `full` 暴露完整工具集；设为 `discovery` 后通过搜索、描述及调用工具按需访问。 |
+| `EPLAN_SKILLS_SYMBOL_SEARCH` | 设为 `1` 启用可选符号搜索，先执行安装脚本并附加 `-IncludeSymbolSearch`。 |
+
+例如，在同一个 PowerShell 会话设置数据目录并安装：
+
+```powershell
+$env:EPLAN_SKILLS_DATA_DIR = 'D:\EPLAN-Skills-Data'
+powershell -ExecutionPolicy Bypass -File .\plugins\eplan-skills\scripts\setup.ps1
+```
+
+让客户端继承相同的环境变量后再启动。若依赖安装失败，检查 Python、网络、权限和脚本的具体错误；不要将许可证文件、EPLAN DLL 或工程文件放进公开仓库。
+
+## 选择技能与文档
+
+`eplan-router` 根据任务选择 `eplan-scripting` 和 `eec-pro-development`。涉及 EEC Pro 生成 P8 工程时，两种技能都适用。`eplan-setup` 提供安装和诊断步骤。
+
+| MCP 名称 | 内容 |
+|---|---|
+| `eplan` | 本机 EPLAN 操作和检查 |
+| `eplan-rag` | P8 2026 文档语义检索 |
+| `eplan-wiki-2027` | P8 2027 文档关键词检索 |
+| `eecpro-rag` | EEC Pro 文档检索 |
+
+远端检索由 Canary E-cad 运营，服务可用性和内容版本由上游决定；参考 [数据与隐私说明](privacy.md)。技能中的反射示例仅描述技术访问方式，应另行确认当前 EPLAN 产品版本和授权，不能把技术上可访问视为使用授权。
+
+## 开发验证
+
+在仓库根目录运行 `python scripts/validate.py` 校验插件结构，运行 `python scripts/package.py` 生成可分发包。有关上游来源、固定版本和许可证，请查阅 [第三方来源说明](../THIRD_PARTY_NOTICES.md)。

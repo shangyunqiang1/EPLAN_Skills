@@ -1,0 +1,20 @@
+{
+  "name": "eplan-skills",
+  "owner": {
+    "name": "shangyunqiang1",
+    "url": "https://github.com/shangyunqiang1"
+  },
+  "plugins": [
+    {
+      "name": "eplan-skills",
+      "source": "./plugins/eplan-skills",
+      "description": "Canary-ECAD EPLAN MCP and skills integration",
+      "version": "0.1.0",
+      "author": {
+        "name": "shangyunqiang1",
+        "url": "https://github.com/shangyunqiang1"
+      },
+      "license": "MIT"
+    }
+  ]
+}

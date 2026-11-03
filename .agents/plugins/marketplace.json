@@ -1,0 +1,20 @@
+{
+  "name": "eplan-skills",
+  "interface": {
+    "displayName": "EPLAN_Skills"
+  },
+  "plugins": [
+    {
+      "name": "eplan-skills",
+      "source": {
+        "source": "local",
+        "path": "./plugins/eplan-skills"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Developer Tools"
+    }
+  ]
+}

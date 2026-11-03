@@ -1,0 +1,69 @@
+"""Protect stdio isolation and external dependency handling."""
+import builtins
+import importlib.util
+from pathlib import Path
+import sys
+from types import SimpleNamespace
+
+ROOT = Path(__file__).resolve().parents[1]
+spec = importlib.util.spec_from_file_location("launcher", ROOT / "plugins/eplan-skills/scripts/run_mcp.py")
+launcher = importlib.util.module_from_spec(spec)
+spec.loader.exec_module(launcher)
+
+
+def test_missing_dependencies_only_write_to_stderr(tmp_path, monkeypatch, capsys):
+    monkeypatch.setattr(sys, "platform", "win32")
+    monkeypatch.setattr(launcher, "data_dir", lambda: tmp_path)
+    monkeypatch.setattr(launcher, "prepare_runtime", lambda: tmp_path / "runtime")
+    assert launcher.main() == 1
+    output = capsys.readouterr()
+    assert output.out == ""
+    assert "setup.ps1" in output.err
+
+
+def test_diagnostics_stay_off_protocol_and_transport_is_stdio(tmp_path, monkeypatch, capsys):
+    target = tmp_path / "venv/Scripts/python.exe"
+    target.parent.mkdir(parents=True)
+    target.touch()
+    monkeypatch.setattr(sys, "platform", "win32")
+    monkeypatch.setattr(sys, "executable", str(target))
+    monkeypatch.setattr(sys, "path", sys.path.copy())
+    monkeypatch.setattr(sys, "dont_write_bytecode", True)
+    monkeypatch.setattr(launcher, "data_dir", lambda: tmp_path)
+    monkeypatch.setenv("MCP_TRANSPORT", "http")
+    monkeypatch.delenv("EPLAN_MCP_LOG_DIR", raising=False)
+    original = builtins.__import__
+    observed = {}
+
+    def run(transport):
+        observed["transport"] = transport
+        print('{"jsonrpc":"2.0"}')
+
+    def import_server(name, *args, **kwargs):
+        if name == "server":
+            print("import diagnostic")
+            return SimpleNamespace(mcp=SimpleNamespace(run=run))
+        return original(name, *args, **kwargs)
+
+    monkeypatch.setattr(builtins, "__import__", import_server)
+    assert launcher.main() == 0
+    output = capsys.readouterr()
+    assert output.out == '{"jsonrpc":"2.0"}\n'
+    assert "import diagnostic" in output.err
+    assert observed["transport"] == "stdio"
+    assert launcher.os.environ["MCP_TRANSPORT"] == "stdio"
+    assert launcher.os.environ["EPLAN_MCP_LOG_DIR"] == str(tmp_path / "logs")
+
+
+def test_generated_files_stay_in_data_runtime(tmp_path, monkeypatch):
+    source = tmp_path / "source"
+    (source / "mcp_server").mkdir(parents=True)
+    (source / "mcp_server/server.py").write_text("# source\n")
+    monkeypatch.setattr(launcher, "SERVER_ROOT", source)
+    monkeypatch.setattr(launcher, "data_dir", lambda: tmp_path / "data")
+    runtime = launcher.prepare_runtime()
+    assert runtime.is_relative_to(tmp_path / "data")
+    (runtime / "mcp_server/generated.cs").write_text("// runtime\n")
+    assert not (source / "mcp_server/generated.cs").exists()
+    assert launcher.prepare_runtime() == runtime
+    assert (runtime / "mcp_server/server.py").read_text() == "# source\n"

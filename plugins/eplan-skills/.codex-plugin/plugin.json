@@ -1,0 +1,60 @@
+{
+  "name": "eplan-skills",
+  "version": "0.1.0",
+  "description": "EPLAN automation MCP and development skills integrated from Canary-ECAD.",
+  "author": {
+    "name": "shangyunqiang1",
+    "url": "https://github.com/shangyunqiang1"
+  },
+  "homepage": "https://github.com/shangyunqiang1/EPLAN_Skills",
+  "repository": "https://github.com/shangyunqiang1/EPLAN_Skills",
+  "license": "MIT",
+  "keywords": [
+    "eplan",
+    "mcp",
+    "eec-pro",
+    "csharp",
+    "electrical-engineering"
+  ],
+  "interface": {
+    "displayName": "EPLAN_Skills",
+    "shortDescription": "EPLAN MCP, scripts and EEC Pro",
+    "longDescription": "Community integration of Canary-ECAD EPLAN automation MCP, Electric P8 scripting/API/Remote Client skills, EEC Pro development skills and hosted documentation search. Requires Windows and a licensed local EPLAN installation for automation.",
+    "developerName": "shangyunqiang1",
+    "category": "Developer Tools",
+    "capabilities": [
+      "Read",
+      "Write"
+    ],
+    "defaultPrompt": [
+      "Help me set up EPLAN_Skills",
+      "Inspect my EPLAN version and connection status",
+      "Help write an EPLAN script using verified API references"
+    ]
+  },
+  "skills": "./skills",
+  "mcpServers": "./.mcp.json",
+  "extensions": {
+    "com.openai": {
+      "onboardingSkill": "./skills/eplan-setup/SKILL.md",
+      "interface": {
+        "displayName": "EPLAN_Skills",
+        "shortDescription": "EPLAN MCP, scripts and EEC Pro",
+        "longDescription": "Community integration of Canary-ECAD EPLAN automation MCP, Electric P8 scripting/API/Remote Client skills, EEC Pro development skills and hosted documentation search. Requires Windows and a licensed local EPLAN installation for automation.",
+        "developerName": "shangyunqiang1",
+        "category": "Developer Tools",
+        "capabilities": [
+          "Read",
+          "Write"
+        ],
+        "defaultPrompt": [
+          "Help me set up EPLAN_Skills",
+          "Inspect my EPLAN version and connection status",
+          "Help write an EPLAN script using verified API references"
+        ]
+      },
+      "skills": "./skills",
+      "mcpServers": "./.mcp.json"
+    }
+  }
+}

@@ -1,0 +1,12 @@
+.upstream/
+.venv/
+.test-data/
+dist/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+*.log
+.env
+.env.*
+!.env.example
+logs/

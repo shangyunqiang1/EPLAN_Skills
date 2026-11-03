@@ -1,0 +1,29 @@
+name: Validate plugin
+on:
+  push:
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - run: python -m pip install -r requirements-dev.txt -r plugins/eplan-skills/vendor/eplan-mcp/eplan-p8-mcp-server/mcp_server/requirements.txt
+      - run: python scripts/validate.py
+      - run: python -m pytest tests plugins/eplan-skills/vendor/eplan-mcp/eplan-p8-mcp-server/tests -m "not live" -q
+      - name: Set up external runtime
+        shell: pwsh
+        run: |
+          $env:EPLAN_SKILLS_DATA_DIR = Join-Path $env:RUNNER_TEMP 'eplan-skills-runtime'
+          "EPLAN_SKILLS_DATA_DIR=$env:EPLAN_SKILLS_DATA_DIR" >> $env:GITHUB_ENV
+          ./plugins/eplan-skills/scripts/setup.ps1
+      - run: python scripts/smoke_mcp.py
+      - run: python scripts/package.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: eplan-skills
+          path: dist/*
