@@ -15,6 +15,13 @@ PLUGIN = Path(__file__).resolve().parents[1] / "plugins/eplan-skills"
 
 def payload(result):
     if isinstance(result.structuredContent, dict):
+        # FastMCP wraps tools returning a JSON string as {"result": "..."}.
+        # Inspect that business result rather than treating the wrapper as it.
+        if set(result.structuredContent) == {"result"} and isinstance(result.structuredContent["result"], str):
+            try:
+                return json.loads(result.structuredContent["result"])
+            except ValueError:
+                pass
         return result.structuredContent
     texts = [part.text for part in result.content if part.type == "text"]
     if len(texts) == 1:

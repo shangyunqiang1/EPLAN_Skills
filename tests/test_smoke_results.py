@@ -25,3 +25,23 @@ def test_successful_documentation_can_return_markdown_not_json():
 def test_explicit_failures_still_fail(session):
     with pytest.raises(AssertionError):
         asyncio.run(smoke_mcp.checked_call(session, "search"))
+
+
+def test_sdk_wrapped_ping_is_read_as_business_result():
+    session = Session('{"alive":true}')
+    session.result.structuredContent = {"result": '{"alive":true}'}
+    assert asyncio.run(smoke_mcp.checked_call(session, "eplan_ping")) == {"alive": True}
+
+
+def test_sdk_wrapped_failure_without_error_flag_still_fails():
+    session = Session('{"success":false}')
+    session.result.structuredContent = {"result": '{"success":false}'}
+    with pytest.raises(AssertionError):
+        asyncio.run(smoke_mcp.checked_call(session, "eplan_get_current_project"))
+
+
+@pytest.mark.parametrize("content", [{"result": "plain text"}, {"result": '{"alive":true}', "other": 1}])
+def test_unrelated_structured_content_is_preserved(content):
+    session = Session("text")
+    session.result.structuredContent = content
+    assert smoke_mcp.payload(session.result) == content

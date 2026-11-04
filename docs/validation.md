@@ -1,5 +1,12 @@
 # 验证记录
 
+## v0.2.1 实机只读补验 — 2026-11-04
+
+- 已安装的 v0.2.1 插件在 EPLAN 2025.0.3 / Windows x64 上完成 Remote Client 连接、`eplan_ping` 心跳及 `selectionset /TYPE:PROJECT` 当前项目查询；当前项目返回非空路径。
+- 已安装插件严格 stdio 实机检查通过：220 个工具、220 个分类注解；连接时原生 .NET 输出没有污染 JSON-RPC stdout。Codex 当前会话的插件连接与 doctor 心跳同样成功。
+- 补验发现并修正仓库检查脚本对 SDK `structuredContent.result` JSON 字符串包装的解析，使成功心跳不会被误报为失败，包装内显式业务失败仍会被检测。此修正不涉及已安装插件运行代码。
+- 验证仅连接及读取，未修改、关闭或保存工程，未保存连接配置；工程写入、导出、EEC Pro 生成及符号推理仍未验证。
+
 ## v0.2.0 / v0.2.1 — 2026-11-03
 
 - 本地最终离线回归：**1441 passed, 3 skipped, 8 deselected**。包含英文 Windows 中文输出回归；保留既有上游弃用警告，未运行工程写入类 live 测试。
